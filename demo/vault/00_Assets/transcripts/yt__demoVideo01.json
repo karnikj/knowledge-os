@@ -1,0 +1,93 @@
+{
+ "schema_version": 1,
+ "source_id": "yt:demoVideo01",
+ "source_version": 1,
+ "content_hash": "sha256:f49425ea8b224adc43c2eb9879849c9dfa183cb3b8ee0ee24295f1f2d7f2c24e",
+ "engine": "demo-stt",
+ "stt_prompt_version": 1,
+ "language": "cs",
+ "duration_s": 48,
+ "created_at": "2026-11-01T09:11:19+00:00",
+ "meta": {
+  "title": "[DEMO] Jak AI agenti zvyšují efektivitu v malých firmách",
+  "channel": "Demo podcast",
+  "upload_date": "20260708",
+  "description": "Smyšlený rozhovor pro ukázku Knowledge OS."
+ },
+ "speakers": {
+  "S0": "Moderátorka",
+  "S1": "Jan Novák"
+ },
+ "stt_quality": {
+  "status": "STT_INCOMPLETE",
+  "reasons": [
+   "žádné segmenty"
+  ],
+  "audio_coverage": 0.0,
+  "speech_coverage": 0.0,
+  "unexplained_gaps": [],
+  "overlap_duplicates": 0,
+  "words": 0,
+  "vtt_words": null,
+  "vtt_word_ratio": null,
+  "aligned_share": 0.0,
+  "alignment_confidence_mean": null
+ },
+ "segments": [
+  {
+   "i": 0,
+   "start": 0.0,
+   "end": 8.0,
+   "speaker": "S0",
+   "text": "Vítejte u dalšího dílu. Dnes se bavíme o tom, jak malé firmy zvyšují efektivitu pomocí AI agentů.",
+   "time_source": "aligned_vtt",
+   "llm_start": 0.0,
+   "llm_end": 8.0,
+   "chunk": 0
+  },
+  {
+   "i": 1,
+   "start": 8.0,
+   "end": 18.0,
+   "speaker": "S1",
+   "text": "Nejčastější chyba je, že firma nasadí agenta a nemá pravidla, co smí rozhodnout sám a co ne.",
+   "time_source": "aligned_vtt",
+   "llm_start": 8.0,
+   "llm_end": 18.0,
+   "chunk": 0
+  },
+  {
+   "i": 2,
+   "start": 18.0,
+   "end": 28.0,
+   "speaker": "S1",
+   "text": "U nás ve firmě Beta Logistik agent zpracovává objednávky a nad určitou částku vždy čeká na člověka.",
+   "time_source": "aligned_vtt",
+   "llm_start": 18.0,
+   "llm_end": 28.0,
+   "chunk": 0
+  },
+  {
+   "i": 3,
+   "start": 28.0,
+   "end": 38.0,
+   "speaker": "S0",
+   "text": "A co náklady? Spousta firem se bojí, že to bude drahé.",
+   "time_source": "aligned_vtt",
+   "llm_start": 28.0,
+   "llm_end": 38.0,
+   "chunk": 0
+  },
+  {
+   "i": 4,
+   "start": 38.0,
+   "end": 48.0,
+   "speaker": "S1",
+   "text": "Náklady na modely jsou dnes haléře za dotaz. Drahé je nasazení bez přípravy dat a procesů.",
+   "time_source": "aligned_vtt",
+   "llm_start": 38.0,
+   "llm_end": 48.0,
+   "chunk": 0
+  }
+ ]
+}

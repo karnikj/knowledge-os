@@ -1,0 +1,5 @@
+# Do repozitáře vždy LF (PC s Windows zapisuje CRLF, VPS LF) — jinak by každá strana „měnila“ všechny soubory
+* text=auto
+*.sh text eol=lf
+*.opus binary
+*.sqlite binary

@@ -1,0 +1,56 @@
+{
+ "schema_version": 1,
+ "source_id": "voice:20261101-101121-1979",
+ "source_version": 1,
+ "content_hash": "sha256:b0cfb998b4dc3cdfc0e966f919bf87a778e396cff479a6c86818cd17c0a7d7f2",
+ "engine": "demo-stt",
+ "stt_prompt_version": 1,
+ "language": "cs",
+ "duration_s": 13.01,
+ "created_at": "2026-11-01T09:11:22+00:00",
+ "meta": {
+  "title": "[DEMO] Postřeh z podcastu",
+  "channel": "Já",
+  "upload_date": "20261101"
+ },
+ "speakers": {
+  "S0": "Mluvčí 1"
+ },
+ "stt_quality": {
+  "status": "STT_OK",
+  "reasons": [],
+  "audio_coverage": 0.922,
+  "speech_coverage": 0.922,
+  "unexplained_gaps": [],
+  "overlap_duplicates": 0,
+  "words": 35,
+  "vtt_words": null,
+  "vtt_word_ratio": null,
+  "aligned_share": 0.0,
+  "alignment_confidence_mean": null
+ },
+ "segments": [
+  {
+   "i": 0,
+   "start": 0.5,
+   "end": 7.0,
+   "speaker": "S0",
+   "text": "Z dnešního podcastu si beru jedno: agenti v účetnictví dávají smysl jen tam, kde jsou jasná pravidla schvalování.",
+   "time_source": "llm",
+   "llm_start": 0.5,
+   "llm_end": 7.0,
+   "chunk": 0
+  },
+  {
+   "i": 1,
+   "start": 7.5,
+   "end": 13.0,
+   "speaker": "S0",
+   "text": "Bez pravidel to firma nasadí a za měsíc to vypne. Napsat o tom krátký článek na web.",
+   "time_source": "llm",
+   "llm_start": 7.5,
+   "llm_end": 13.0,
+   "chunk": 0
+  }
+ ]
+}

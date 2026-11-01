@@ -1,0 +1,14 @@
+{
+ "schema_version": 1,
+ "source_id": "voice:20261101-101121-1979",
+ "transcript_hash": "sha256:b0cfb998b4dc3cdfc0e966f919bf87a778e396cff479a6c86818cd17c0a7d7f2",
+ "mentions": [
+  {
+   "entity": "ucetnictvi",
+   "segment": 0,
+   "t": 0.5,
+   "speaker": "Mluvčí 1",
+   "surface": "účetnictví"
+  }
+ ]
+}

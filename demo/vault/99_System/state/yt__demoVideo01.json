@@ -1,0 +1,27 @@
+{
+  "source_id": "yt:demoVideo01",
+  "steps": {
+    "analyze": {
+      "claims": 2,
+      "engine": "demo-analysis",
+      "input_hash": "sha256:f49425ea8b224adc43c2eb9879849c9dfa183cb3b8ee0ee24295f1f2d7f2c24e",
+      "mentions": 3,
+      "prompt_version": 1,
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:19+00:00"
+    },
+    "ground": {
+      "engine": "ground-v1",
+      "status": "done",
+      "unverified": 0,
+      "updated_at": "2026-11-01T09:11:19+00:00",
+      "verified": 2
+    },
+    "render": {
+      "engine": "render-v3",
+      "output": "01_Zdroje/2026-07-08 - Demo podcast - [DEMO] Jak AI agenti zvyšují efektivitu v malých firmách.md",
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:19+00:00"
+    }
+  }
+}

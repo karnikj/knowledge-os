@@ -1,0 +1,19 @@
+{
+  "source_id": "meeting:20261101-101123-6120",
+  "steps": {
+    "align": {
+      "engine": "demo-stt",
+      "output_hash": "sha256:fed1d3146c7370c88f2c754e680c930f17ec5208e1fc914d5205289b6f1e9266",
+      "quality": "STT_OK",
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:27+00:00"
+    },
+    "stt": {
+      "chunks": 1,
+      "engine": "demo-stt",
+      "prompt_version": 1,
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:27+00:00"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Knowledge OS",
+  "short_name": "Knowledge OS",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f5",
+  "theme_color": "#2f74b5",
+  "icons": [
+    {"src": "/static/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {"title": "title", "text": "text", "url": "url",
+               "files": [{"name": "file", "accept": [".pdf", ".docx", ".md", ".txt", "application/pdf", "text/plain", "text/markdown",
+                         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]}]}
+  }
+}

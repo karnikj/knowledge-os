@@ -1,0 +1,43 @@
+{
+ "key": {
+  "engine": "demo-analysis",
+  "prompt_version": 1,
+  "input": "48836079d7fe1f02"
+ },
+ "result": {
+  "summary": "Rozpočet: rezerva na AI nástroje, kontrola smlouvy.",
+  "chapters": [
+   {
+    "segment": 0,
+    "title": "Rozpočet"
+   }
+  ],
+  "claims": [
+   {
+    "speaker": "Já",
+    "segment_ids": [
+     0
+    ],
+    "quote": "rezervu na AI nástroje, zhruba dvacet tisíc korun ročně",
+    "claim": "Do rozpočtu dát rezervu asi 20 000 Kč ročně na AI nástroje.",
+    "type": "recommendation",
+    "volatility": "low",
+    "attitudes": []
+   }
+  ],
+  "mentions": [
+   {
+    "segment": 1,
+    "surface": "Alfa Trade",
+    "name": "Alfa Trade s.r.o.",
+    "type": "organizace"
+   },
+   {
+    "segment": 0,
+    "surface": "rozpočtu",
+    "name": "Rozpočet",
+    "type": "tema"
+   }
+  ]
+ }
+}

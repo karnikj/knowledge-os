@@ -1,0 +1,28 @@
+{
+ "schema_version": 1,
+ "source_id": "yt:demoVideo01",
+ "transcript_hash": "sha256:f49425ea8b224adc43c2eb9879849c9dfa183cb3b8ee0ee24295f1f2d7f2c24e",
+ "mentions": [
+  {
+   "entity": "ai-agenti",
+   "segment": 0,
+   "t": 0.0,
+   "speaker": "Moderátorka",
+   "surface": "AI agentů"
+  },
+  {
+   "entity": "jan-novak",
+   "segment": 0,
+   "t": 0.0,
+   "speaker": "Moderátorka",
+   "surface": "Vítejte"
+  },
+  {
+   "entity": "beta-logistik",
+   "segment": 2,
+   "t": 18.0,
+   "speaker": "Jan Novák",
+   "surface": "Beta Logistik"
+  }
+ ]
+}

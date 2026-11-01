@@ -1,0 +1,53 @@
+# Šablona zápisu ze schůzky (upravuje se v aplikaci → Schůzky → Šablony).
+# Typy polí: short = krátký text, text = delší text, datetime = datum a čas, people = osoby, list = seznam bodů, topics = projednané body (bod + popis), tasks = úkoly (co / kdo / do kdy)
+id: zapis-firma
+name: Zápis ze schůzky - firma
+fields:
+- id: nazev
+  label: Název / téma schůzky
+  type: short
+  ai: Krátký věcný název podle hlavního tématu, pokud ho uživatel nezadal.
+- id: datum
+  label: Datum a čas
+  type: datetime
+  ai: ''
+- id: misto
+  label: Místo / forma
+  type: short
+  ai: Jen pokud zazní (např. osobně u klienta, online Teams, zasedačka).
+- id: ucastnici
+  label: Účastníci
+  type: people
+  ai: Každý účastník zvlášť ve tvaru „Jméno Příjmení, firma“. Firmu uveď, jen pokud zazní nebo je zřejmá z kontextu.
+- id: cil
+  label: Program / cíl schůzky
+  type: text
+  ai: Stručně, co se má projednat. Obvykle vyplní uživatel před schůzkou — pokud je prázdné, doplň podle úvodu schůzky.
+- id: shrnuti
+  label: Shrnutí
+  type: text
+  ai: Krátké shrnutí celého jednání (3–6 vět). Na konci jasně uveď hlavní výsledek schůzky.
+- id: body
+  label: Projednané body
+  type: topics
+  ai: 'Jednotlivá témata. Pod každým stručný věcný zápis: fakta, názory a informace, které na schůzce skutečně zazněly (kdo
+    co uvedl). Nic nedomýšlej.'
+- id: rozhodnuti
+  label: Rozhodnutí a závěry
+  type: list
+  ai: Co bylo dohodnuto, co schváleno, co odloženo; případně kdo s čím souhlasil. Každou položku začni slovem Dohodnuto /
+    Schváleno / Odloženo. Ne návrhy a nápady.
+- id: ukoly
+  label: Úkoly a další kroky
+  type: tasks
+  ai: 'Každý úkol, který na schůzce zazněl: kdo má co udělat, zaslat, doplnit, upřesnit, definovat nebo dodat (dokumenty,
+    data, nabídky). Co = konkrétně co, kdo = jméno, do kdy = termín, pokud zazněl (i přibližný, např. do pátku); jinak nech
+    prázdné. Nic nevymýšlej.'
+- id: otevrene
+  label: Otevřené otázky
+  type: list
+  ai: Otázky, které zůstaly nevyřešené; informace, které je potřeba doplnit; témata odložená na další jednání.
+- id: dalsi
+  label: Další jednání
+  type: text
+  ai: 'Jen pokud bylo domluveno: termín a účel (co se bude řešit). Jinak nech prázdné.'

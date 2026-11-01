@@ -1,0 +1,96 @@
+# Registr entit Knowledge OS — kanonický název, typ, aliasy, nadřazená entita.
+# status: navrženo (přidala analýza) | potvrzeno (zkontrolováno) | zamítnuto (šum, skryté). Typy: osoba, organizace, software, ai_model, hardware, sluzba, projekt, publikace, misto, udalost, tema
+alfa-trade-sro:
+  name: Alfa Trade s.r.o.
+  type: organizace
+  aliases:
+  - Alfa Trade
+  parent: null
+  status: navrženo
+  first_seen: voice:20261101-101119-230c
+beta-logistik:
+  name: Beta Logistik
+  type: organizace
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: yt:demoVideo01
+eva-mala:
+  name: Eva Malá
+  type: osoba
+  aliases:
+  - Evy Malé
+  parent: null
+  status: navrženo
+  first_seen: voice:20261101-101119-230c
+jan-novak:
+  name: Jan Novák
+  type: osoba
+  aliases:
+  - Vítejte
+  parent: null
+  status: navrženo
+  first_seen: yt:demoVideo01
+ares:
+  name: ARES
+  type: sluzba
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: file:512d9f7f62e16636
+ai-agenti:
+  name: AI agenti
+  type: tema
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: yt:demoVideo01
+cashflow:
+  name: Cash-flow
+  type: tema
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: voice:20261101-101119-230c
+efektivita:
+  name: Efektivita
+  type: tema
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: yt:demoVideo01
+onboarding:
+  name: Onboarding
+  type: tema
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: file:e0b57c250a174e89
+rozpocet:
+  name: Rozpočet
+  type: tema
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: voice:20261101-101122-c039
+schvalovani-faktur:
+  name: Schvalování faktur
+  type: tema
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: file:512d9f7f62e16636
+ucetnictvi:
+  name: Účetnictví
+  type: tema
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: voice:20261101-101121-1979
+workshopy:
+  name: Workshopy
+  type: tema
+  aliases: []
+  parent: null
+  status: navrženo
+  first_seen: voice:20261101-101119-230c

@@ -1,0 +1,40 @@
+{
+ "schema_version": 1,
+ "source_id": "file:e0b57c250a174e89",
+ "transcript_hash": "sha256:8f8f575a2648c7ca1dae70dced1d8592f3a695fd55f34b6cf2526847e4c7f503",
+ "engine": "demo-fill",
+ "prompt_version": 1,
+ "created_at": "2026-11-01T10:11:27",
+ "kind": "document",
+ "doc_type": "postup / návod",
+ "tldr": "Třístupňový postup zaučení nového kolegy: první den přístupy, první týden procesy, první měsíc samostatná zakázka a doplnění dokumentace.",
+ "key_points": [
+  "Poznámky rovnou do znalostní báze.",
+  "Po měsíci porada: co chybělo v dokumentaci."
+ ],
+ "applies_to": "noví zaměstnanci",
+ "validity": "",
+ "terms": [],
+ "topics": [
+  "onboarding"
+ ],
+ "chapters": [
+  {
+   "segment": 0,
+   "title": "[DEMO] Postup pro zaučení nového kolegy › První den",
+   "page": null
+  },
+  {
+   "segment": 1,
+   "title": "[DEMO] Postup pro zaučení nového kolegy › První týden",
+   "page": null
+  },
+  {
+   "segment": 2,
+   "title": "[DEMO] Postup pro zaučení nového kolegy › První měsíc",
+   "page": null
+  }
+ ],
+ "claims": [],
+ "unverified_claims": []
+}

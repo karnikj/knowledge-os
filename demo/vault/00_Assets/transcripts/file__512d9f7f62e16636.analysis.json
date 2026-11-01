@@ -1,0 +1,55 @@
+{
+ "schema_version": 1,
+ "source_id": "file:512d9f7f62e16636",
+ "transcript_hash": "sha256:b039ca1424018d31e15e108d0a934e06d88531c9c686efde0fbe048a632d2e42",
+ "engine": "demo-fill",
+ "prompt_version": 1,
+ "created_at": "2026-11-01T10:11:27",
+ "kind": "document",
+ "doc_type": "interní norma / směrnice",
+ "tldr": "Směrnice upravuje příjem, kontrolu a schvalování přijatých faktur: ověření dodavatele, schvalovací limit 50 000 Kč a hrazení ve splatnosti.",
+ "key_points": [
+  "Faktury do 50 000 Kč schvaluje vedoucí účtárny, nad 50 000 Kč jednatel.",
+  "Neznámý bankovní účet se vždy telefonicky ověřuje.",
+  "Pondělní přehled faktur po splatnosti."
+ ],
+ "applies_to": "účtárna Alfa Trade s.r.o.",
+ "validity": "",
+ "terms": [
+  "schvalovací limit",
+  "ARES"
+ ],
+ "topics": [
+  "schvalovani-faktur",
+  "ucetnictvi"
+ ],
+ "chapters": [
+  {
+   "segment": 0,
+   "title": "[DEMO] Směrnice o schvalování přijatých faktur › 1. Účel",
+   "page": null
+  },
+  {
+   "segment": 1,
+   "title": "[DEMO] Směrnice o schvalování přijatých faktur › 2. Příjem faktur",
+   "page": null
+  },
+  {
+   "segment": 2,
+   "title": "[DEMO] Směrnice o schvalování přijatých faktur › 3. Kontrola",
+   "page": null
+  },
+  {
+   "segment": 3,
+   "title": "[DEMO] Směrnice o schvalování přijatých faktur › 4. Schvalování",
+   "page": null
+  },
+  {
+   "segment": 4,
+   "title": "[DEMO] Směrnice o schvalování přijatých faktur › 5. Splatnost",
+   "page": null
+  }
+ ],
+ "claims": [],
+ "unverified_claims": []
+}

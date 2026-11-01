@@ -1,0 +1,41 @@
+{
+  "source_id": "voice:20261101-101122-c039",
+  "steps": {
+    "align": {
+      "engine": "demo-stt",
+      "output_hash": "sha256:02f330ff9e419b36a6fd2401476065fda24bfd4fb7a4ad3dbd5014b1af43fe94",
+      "quality": "STT_OK",
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:23+00:00"
+    },
+    "analyze": {
+      "claims": 1,
+      "engine": "demo-analysis",
+      "input_hash": "sha256:02f330ff9e419b36a6fd2401476065fda24bfd4fb7a4ad3dbd5014b1af43fe94",
+      "mentions": 2,
+      "prompt_version": 1,
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:23+00:00"
+    },
+    "ground": {
+      "engine": "ground-v1",
+      "status": "done",
+      "unverified": 0,
+      "updated_at": "2026-11-01T09:11:23+00:00",
+      "verified": 1
+    },
+    "render": {
+      "engine": "render-v3",
+      "output": "14_Internal/VoiceNotes/20261101-1011 - [DEMO] Připomínka k rozpočtu.md",
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:23+00:00"
+    },
+    "stt": {
+      "chunks": 1,
+      "engine": "demo-stt",
+      "prompt_version": 1,
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:23+00:00"
+    }
+  }
+}

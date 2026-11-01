@@ -1,0 +1,64 @@
+{
+ "key": {
+  "engine": "demo-analysis",
+  "prompt_version": 1,
+  "input": "a1ea952d90c3b51c"
+ },
+ "result": {
+  "summary": "Nápad na workshop o AI agentech pro malé firmy.",
+  "chapters": [
+   {
+    "segment": 0,
+    "title": "Nápad"
+   },
+   {
+    "segment": 2,
+    "title": "Další krok"
+   }
+  ],
+  "claims": [
+   {
+    "speaker": "Já",
+    "segment_ids": [
+     0
+    ],
+    "quote": "udělat půldenní workshop o AI agentech pro vedení malých firem",
+    "claim": "Uspořádat půldenní workshop o AI agentech pro vedení malých firem.",
+    "type": "recommendation",
+    "volatility": "low",
+    "attitudes": []
+   },
+   {
+    "speaker": "Já",
+    "segment_ids": [
+     2
+    ],
+    "quote": "Zeptat se Evy z Alfa Trade",
+    "claim": "Oslovit Alfa Trade jako prvního zájemce.",
+    "type": "recommendation",
+    "volatility": "low",
+    "attitudes": []
+   }
+  ],
+  "mentions": [
+   {
+    "segment": 2,
+    "surface": "Alfa Trade",
+    "name": "Alfa Trade s.r.o.",
+    "type": "organizace"
+   },
+   {
+    "segment": 2,
+    "surface": "Evy Malé",
+    "name": "Eva Malá",
+    "type": "osoba"
+   },
+   {
+    "segment": 1,
+    "surface": "cash-flow",
+    "name": "Cash-flow",
+    "type": "tema"
+   }
+  ]
+ }
+}

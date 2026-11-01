@@ -1,0 +1,88 @@
+/* Zápis ze schůzky — vizuál dokumentu (tisk): světlé pozadí, Ink, terakota jako značka dokumentu.
+   Stejný styl používá web (náhled / schválený zápis) i PDF (WeasyPrint). Písma: fonts.css (web) / @font-face v PDF. */
+.jkdoc{--ink:#1A202C;--body:#475569;--line:#E2E8F0;--paper:#FFFFFF;--off:#F7FAFC;--terra:#C2542A;--terra-t:#A8461F;
+  --teal:#0E7490;--sage:#6B8F71;--sage-t:#4F7358;--ai:#334155;
+  font-family:"Inter","Inter JK",system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:15px;line-height:1.6;
+  border-top:4px solid var(--terra);padding:28px 32px 24px;border-radius:4px;box-shadow:0 1px 3px rgba(26,32,44,.06),0 8px 28px rgba(26,32,44,.06)}
+.jkdoc *{box-sizing:border-box}
+.jkdoc h1,.jkdoc h2,.jkdoc h3,.jkdoc .jd-num,.jkdoc .jd-brand b{font-family:"Space Grotesk","Inter",sans-serif}
+.jkdoc p,.jkdoc li,.jkdoc td{text-wrap:pretty}
+
+/* hlavička: podpis značky + nadeznámka + název + cíl + přehled */
+.jd-brand{display:flex;align-items:center;gap:10px;margin:0 0 22px}
+.jd-brand img{width:34px;height:34px}
+.jd-brand b{display:block;font-size:14px;font-weight:600;line-height:1.2}
+.jd-brand span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;color:var(--teal)}
+.jd-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-t);margin:0 0 6px}
+.jkdoc h1{font-size:30px;line-height:1.15;font-weight:700;margin:0 0 10px;letter-spacing:-.01em}
+.jd-goal{font-size:16.5px;color:var(--body);margin:0 0 18px;max-width:62ch}
+.jd-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 24px;margin:0;padding:14px 0 16px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.jd-meta div{min-width:0}
+.jd-meta dt{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--body);margin:0 0 2px}
+.jd-meta dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.jd-meta .jd-people{grid-column:1/-1}
+
+/* sekce */
+.jd-sec{margin:16px 0 0;border:1px solid #CBD5E1;border-radius:4px;padding:14px 18px 8px;background:var(--paper)}
+header+.jd-sec{margin-top:22px}
+.jd-sec>h2{break-after:avoid}.jd-sec li,.jd-sec tr,.jd-lead,.jd-todo{break-inside:avoid}
+.jd-sec>h2{display:flex;align-items:baseline;gap:10px;font-size:19px;font-weight:600;margin:0 0 12px;line-height:1.25}
+.jd-num{font-size:13px;font-weight:700;color:var(--terra-t);letter-spacing:.06em;min-width:22px}
+.jd-sec p{margin:0 0 8px}
+.jd-lead{background:var(--off);border-left:3px solid var(--terra);padding:16px 20px}
+.jd-lead p{font-size:16px;line-height:1.65}
+.jd-lead>h2{margin-bottom:8px}
+
+/* seznamy */
+.jkdoc ul,.jkdoc ol{margin:0;padding:0;list-style:none}
+.jd-list li{position:relative;padding:7px 0 7px 22px;border-bottom:1px solid var(--line)}
+.jd-list li:last-child{border-bottom:0}
+.jd-list li::before{content:"";position:absolute;left:4px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--body)}
+.jd-check li::before{content:"✓";width:auto;height:auto;background:none;top:6px;left:0;color:var(--sage-t);font-weight:700}
+.jd-steps{counter-reset:s}
+.jd-steps li{counter-increment:s}
+.jd-steps li::before{content:counter(s) ".";width:auto;height:auto;background:none;border-radius:0;top:7px;left:0;
+  font-size:13px;font-weight:700;color:var(--body)}
+
+/* projednané body */
+.jd-topics li{padding:12px 0;border-bottom:1px solid var(--line)}
+.jd-topics li:first-child{padding-top:2px}.jd-topics li:last-child{border-bottom:0}
+.jd-topics h3{font-size:16px;font-weight:600;margin:0 0 4px}
+.jd-topics p{margin:0;color:var(--ink)}
+
+/* úkoly: rámeček v barvě dokumentu (terakota), aby je čtenář našel na první pohled */
+.jd-todo{border:1.5px solid var(--terra);background:rgba(194,84,42,.05);border-radius:4px;padding:14px 18px 6px}
+.jd-todo .jd-tasks th{border-bottom-color:var(--terra)}
+.jd-todo .jd-tasks tr:last-child td{border-bottom:0}
+/* úkoly */
+.jd-tasks{width:100%;border-collapse:collapse;font-size:14.5px}
+.jd-tasks th{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--body);text-align:left;
+  padding:0 12px 8px 0;border-bottom:2px solid var(--ink)}
+.jd-tasks td{padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.jd-tasks td.who{font-weight:600;white-space:nowrap}
+.jd-tasks td.when{white-space:nowrap;font-variant-numeric:tabular-nums}
+.jd-tasks tr.done td:first-child{text-decoration:line-through;color:var(--body)}
+
+/* co napsala AI (jen na webu; v PDF se neoznačuje) */
+.jkdoc .ai,.jkdoc .ai p,.jkdoc .ai h3{color:var(--ai)}
+.jd-ai{display:inline-block;margin-left:6px;padding:0 5px;border:1px solid var(--teal);border-radius:3px;color:var(--teal);
+  font:700 9.5px/15px "Inter",sans-serif;letter-spacing:.08em;vertical-align:2px}
+
+.jd-foot{margin:30px 0 0;padding:12px 0 0;border-top:1px solid var(--line);font-size:12.5px;color:var(--body);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.jd-warn{margin:14px 0 0;padding:10px 14px;border-left:3px solid #B91C1C;background:#FEF2F2;font-size:14px}
+
+@media (max-width:600px){
+  .jkdoc{padding:20px 16px 18px;font-size:15px}
+  .jkdoc h1{font-size:24px}
+  .jd-lead{padding:14px 14px}
+  .jd-tasks thead{display:none}
+  .jd-tasks,.jd-tasks tbody,.jd-tasks tr,.jd-tasks td{display:block;width:100%}
+  .jd-tasks tr{padding:10px 0;border-bottom:1px solid var(--line)}
+  .jd-tasks td{border:0;padding:0}
+  .jd-tasks td.who,.jd-tasks td.when{display:inline;font-size:13.5px;color:var(--body);white-space:normal;overflow-wrap:anywhere}
+  .jd-todo{padding:12px 14px 4px}
+  .jd-tasks td.who:not(:empty)::before{content:"→ "}
+  .jd-tasks td.when:not(:empty)::before{content:" · do "}
+}

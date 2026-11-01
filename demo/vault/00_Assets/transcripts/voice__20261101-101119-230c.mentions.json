@@ -1,0 +1,28 @@
+{
+ "schema_version": 1,
+ "source_id": "voice:20261101-101119-230c",
+ "transcript_hash": "sha256:f5a1259eaca47339b1b634b501a0a4a591606675aeeee0453521b14ab1e7dfb4",
+ "mentions": [
+  {
+   "entity": "cashflow",
+   "segment": 1,
+   "t": 6.5,
+   "speaker": "Mluvčí 1",
+   "surface": "cash-flow"
+  },
+  {
+   "entity": "alfa-trade-sro",
+   "segment": 2,
+   "t": 12.5,
+   "speaker": "Mluvčí 1",
+   "surface": "Alfa Trade"
+  },
+  {
+   "entity": "eva-mala",
+   "segment": 2,
+   "t": 12.5,
+   "speaker": "Mluvčí 1",
+   "surface": "Evy Malé"
+  }
+ ]
+}

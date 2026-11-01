@@ -1,0 +1,67 @@
+## Pravidla pro výstup:
+1. Výstup musí být kompletně v ČEŠTINĚ.
+2. Zamez jakýmkoliv úvodním nebo závěrečným řečem (začni rovnou YAML frontmatterem `---`).
+3. NIKDY neobaluj celý výstup do zpětných uvozovek (code blocků) jako ```markdown ... ```. Vygeneruj čistý textový výstup, který začíná přímo znaky `---`.
+4. Všechny seznamy v YAML frontmatteru (autor, hoste, organizace, nastroje, temata) musí být formátovány striktně jako YAML seznamy (každá položka na novém řádku, začínající pomlčkou, hodnota v uvozovkách a wiki-linku, např. `- "[[Jméno]]"`). Pokud je autorů více, ulož je jako seznam, nikdy ne jako jeden řetězec spojený čárkou.
+5. Pravdivost tvrzení v této fázi NIKDY neověřuj. Pouze je věrně extrahuj, klasifikuj jejich typ, odhadni volatilitu a vyznač ta tvrzení, která jsou vhodná pro pozdější nezávislé ověření.
+6. Buď maximálně přesný. NIKDY si nevymýšlej ani neodhaduj jména, organizace, témata nebo jakákoliv jiná data, která z nahrávky se 100% jistotou nevyplývají. Pokud si nejsi jistý(á) jménem nebo pojmem, napiš jej s otazníkem (např. [[Jan Novák?]]) nebo pole nechej zcela prázdné (např. `hoste: `). Halucinace jsou přísně zakázány.
+
+## Požadovaná struktura Markdownu:
+
+```markdown
+---
+typ: video
+published_at: YYYY-MM-DD (odhadni přibližné datum vydání z kontextu videa, pokud ho neznáš)
+dominant_volatility: low / medium / high
+schema_version: 2
+prompt_version: 1
+analyzer_version: 1.0
+autor:
+  - "[[Jméno Autora]]"
+hoste:
+  - "[[Host 1]]"
+  - "[[Host 2]]"
+organizace:
+  - "[[Organizace 1]]"
+nastroje:
+  - "[[Nástroj/Kniha 1]]"
+temata:
+  - "[[Téma 1]]"
+---
+
+# Název Videa (Uprav podle skutečného názvu a obsahu)
+
+## 📌 Rychlé shrnutí (TL;DR)
+[Stručný odstavec shrnující hlavní myšlenku videa a jeho přínos.]
+
+## ⏱️ Kapitoly a časová osa
+[Zde vypiš klíčové části videa s časovými značkami ve formátu MM:SS - Popis kapitoly.]
+- 00:00 - Úvod a představení témat
+- 05:12 - Hlavní myšlenka...
+
+## 🔑 Klíčové body a myšlenky
+- **Bod 1**: Podrobnější popis klíčové myšlenky.
+- **Bod 2**: Další klíčová myšlenka...
+
+## ⚖️ Tvrzení a názory (Claims)
+[Zde vypiš subjektivní tvrzení, předpovědi, doporučení, hypotézy a názory mluvčích. Každé tvrzení musí mít přiřazeného autora a časovou značku. Tvrzení v této fázi neověřuj, pouze je věrně extrahuj, klasifikuj typ a odhadni volatilitu.]
+*   **[[Mluvčí]]** tvrdí: *„[Přesné znění nebo věrný parafrázovaný popis tvrzení]“* v čase [MM:SS].
+    *   Typ tvrzení: fact / opinion / prediction / recommendation / hypothesis
+    *   Volatilita: low / medium / high (jistota odhadu: 0.XX)
+    *   Jistota extrakce (Confidence): high / medium / low
+
+
+## 📊 Klíčová fakta (Facts)
+[Zde vypiš objektivně ověřitelná fakta zmíněná ve videu, např. vydání produktů, statistická data.]
+*   **Fakt**: [Popis faktu] v čase [MM:SS]. (Zdroj/Kontext: ...)
+
+## 👥 Zmíněné entity
+[Seznam entit pro budoucí propojení do grafu.]
+- Lidé: [[Osoba 1]], [[Osoba 2]]
+- Organizace: [[Organizace 1]], [[Organizace 2]]
+- Projekty a produkty: [[Produkt 1]], [[Kniha 2]]
+- Témata: [[Téma 1]], [[Téma 2]]
+
+## 📝 Kompletní přepis (Doslovný text)
+[Zde vlož kompletní přepis řeči. Text rozděl do logických odstavců. Oprav gramatické chyby, doplň interpunkci a odstraň parazitní slova (ehm, vlastně, jakože), aby byl text vysoce čitelný.]
+```

@@ -1,0 +1,77 @@
+{
+ "schema_version": 1,
+ "source_id": "yt:demoVideo01",
+ "transcript_hash": "sha256:f49425ea8b224adc43c2eb9879849c9dfa183cb3b8ee0ee24295f1f2d7f2c24e",
+ "engine": "demo-analysis",
+ "prompt_version": 1,
+ "created_at": "2026-11-01T09:11:19+00:00",
+ "tldr": "AI agenti v malých firmách potřebují jasná pravidla; náklady na modely jsou nízké, drahá je nepřipravenost.",
+ "key_points": [
+  "**Pravidla**: co agent smí rozhodnout sám",
+  "**Náklady**: haléře za dotaz, drahé je nasazení bez procesů"
+ ],
+ "topics": [
+  "ai-agenti",
+  "efektivita"
+ ],
+ "dominant_volatility": "medium",
+ "chapters": [
+  {
+   "segment": 0,
+   "title": "Úvod"
+  },
+  {
+   "segment": 1,
+   "title": "Pravidla pro agenty"
+  },
+  {
+   "segment": 3,
+   "title": "Náklady"
+  }
+ ],
+ "claims": [
+  {
+   "id": "c001",
+   "speaker": "Jan Novák",
+   "claim": "Firmy často nasazují agenty bez pravidel, co smí rozhodnout samy.",
+   "quote": "firma nasadí agenta a nemá pravidla, co smí rozhodnout sám",
+   "type": "opinion",
+   "volatility": "medium",
+   "segment_ids": [
+    1
+   ],
+   "t": 8.0,
+   "attitudes": [],
+   "grounding": {
+    "method": "structural",
+    "score": 1.0
+   }
+  },
+  {
+   "id": "c002",
+   "speaker": "Jan Novák",
+   "claim": "Náklady na AI modely jsou haléře za dotaz; drahé je nasazení bez přípravy.",
+   "quote": "Náklady na modely jsou dnes haléře za dotaz",
+   "type": "fact",
+   "volatility": "high",
+   "segment_ids": [
+    4
+   ],
+   "t": 38.0,
+   "attitudes": [],
+   "grounding": {
+    "method": "structural",
+    "score": 1.0
+   }
+  }
+ ],
+ "unverified_claims": [],
+ "stats": {
+  "windows": 1,
+  "claims": 2,
+  "unverified": 0,
+  "mentions": 3,
+  "mentions_dropped": 0,
+  "generic_dropped": 0
+ }
+}

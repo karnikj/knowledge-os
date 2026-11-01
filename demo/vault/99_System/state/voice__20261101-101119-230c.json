@@ -1,0 +1,41 @@
+{
+  "source_id": "voice:20261101-101119-230c",
+  "steps": {
+    "align": {
+      "engine": "demo-stt",
+      "output_hash": "sha256:f5a1259eaca47339b1b634b501a0a4a591606675aeeee0453521b14ab1e7dfb4",
+      "quality": "STT_OK",
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:21+00:00"
+    },
+    "analyze": {
+      "claims": 2,
+      "engine": "demo-analysis",
+      "input_hash": "sha256:f5a1259eaca47339b1b634b501a0a4a591606675aeeee0453521b14ab1e7dfb4",
+      "mentions": 3,
+      "prompt_version": 1,
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:21+00:00"
+    },
+    "ground": {
+      "engine": "ground-v1",
+      "status": "done",
+      "unverified": 0,
+      "updated_at": "2026-11-01T09:11:21+00:00",
+      "verified": 2
+    },
+    "render": {
+      "engine": "render-v3",
+      "output": "14_Internal/VoiceNotes/20261101-1011 - [DEMO] Nápad na workshop.md",
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:21+00:00"
+    },
+    "stt": {
+      "chunks": 1,
+      "engine": "demo-stt",
+      "prompt_version": 1,
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:21+00:00"
+    }
+  }
+}

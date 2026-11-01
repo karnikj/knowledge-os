@@ -1,0 +1,21 @@
+{
+ "schema_version": 1,
+ "source_id": "file:512d9f7f62e16636",
+ "transcript_hash": "sha256:b039ca1424018d31e15e108d0a934e06d88531c9c686efde0fbe048a632d2e42",
+ "mentions": [
+  {
+   "entity": "alfa-trade-sro",
+   "segment": 0,
+   "t": 0.0,
+   "speaker": "[DEMO] Směrnice o schvalování přijatých faktur › 1. Účel",
+   "surface": "Alfa Trade s.r.o."
+  },
+  {
+   "entity": "ares",
+   "segment": 2,
+   "t": 0.0,
+   "speaker": "[DEMO] Směrnice o schvalování přijatých faktur › 3. Kontrola",
+   "surface": "ARES"
+  }
+ ]
+}

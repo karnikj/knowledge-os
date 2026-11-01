@@ -1,0 +1,25 @@
+{
+  "source_id": "file:e0b57c250a174e89",
+  "steps": {
+    "analyze": {
+      "engine": "demo-fill",
+      "input_hash": "sha256:8f8f575a2648c7ca1dae70dced1d8592f3a695fd55f34b6cf2526847e4c7f503",
+      "mentions": 0,
+      "prompt_version": 1,
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:27+00:00"
+    },
+    "ingest": {
+      "engine": "doc-v1",
+      "segments": 3,
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:27+00:00"
+    },
+    "render": {
+      "engine": "doc-card-v1",
+      "output": "01_Zdroje/Dokumenty/[DEMO] Postup pro zaučení nového kolegy.md",
+      "status": "done",
+      "updated_at": "2026-11-01T09:11:27+00:00"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "pipeline/",
+    "tests/",
+    "deploy/",
+    "demo/",
+    "00_Assets/transcripts/raw/",
+    "99_System/state/",
+    "99_System/index/",
+    "99_System/logs/",
+    "99_System/runner/",
+    "18_Inbox_Hlas/"
+  ]
+}

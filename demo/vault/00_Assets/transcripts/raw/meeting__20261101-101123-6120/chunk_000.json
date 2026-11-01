@@ -1,0 +1,60 @@
+{
+ "engine": "demo-stt",
+ "prompt_version": 1,
+ "index": 0,
+ "start": 0.0,
+ "end": 63.0135,
+ "check": {
+  "attempts": 1
+ },
+ "segments": [
+  {
+   "start": 0.5,
+   "end": 7,
+   "speaker": "Mluvčí 1",
+   "text": "Dobrý den, děkuji, že jste přišli. Dnes probereme zavedení AI asistenta do účtárny Alfa Trade."
+  },
+  {
+   "start": 7.5,
+   "end": 15,
+   "speaker": "Mluvčí 2",
+   "text": "Za Alfa Trade nás nejvíc trápí přijaté faktury. Chodí e-mailem a Eva je ručně přepisuje do systému."
+  },
+  {
+   "start": 15.5,
+   "end": 23,
+   "speaker": "Mluvčí 3",
+   "text": "Je to tak, denně je to hodina práce a občas se něco ztratí. Chtěli bychom, aby to kontroloval automat."
+  },
+  {
+   "start": 23.5,
+   "end": 32,
+   "speaker": "Mluvčí 1",
+   "text": "Navrhuji pilot na tři měsíce. Asistent faktury vytěží, ověří dodavatele a nad padesát tisíc pošle ke schválení Petrovi."
+  },
+  {
+   "start": 32.5,
+   "end": 40,
+   "speaker": "Mluvčí 2",
+   "text": "Souhlasím. Limit padesát tisíc je v pořádku. Rozhodli jsme, že pilot začne od prvního listopadu."
+  },
+  {
+   "start": 40.5,
+   "end": 48,
+   "speaker": "Mluvčí 1",
+   "text": "Já připravím nabídku a harmonogram do pátku. Evo, pošlete mi prosím deset ukázkových faktur."
+  },
+  {
+   "start": 48.5,
+   "end": 54,
+   "speaker": "Mluvčí 3",
+   "text": "Pošlu je zítra. A chtěla bych vědět, kam se ukládají data, kvůli GDPR."
+  },
+  {
+   "start": 54.5,
+   "end": 62,
+   "speaker": "Mluvčí 1",
+   "text": "Data zůstanou na vašem serveru, ven odchází jen text faktury k vytěžení. Popíšu to v nabídce."
+  }
+ ]
+}

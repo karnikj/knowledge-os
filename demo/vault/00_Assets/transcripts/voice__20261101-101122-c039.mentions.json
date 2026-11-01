@@ -1,0 +1,21 @@
+{
+ "schema_version": 1,
+ "source_id": "voice:20261101-101122-c039",
+ "transcript_hash": "sha256:02f330ff9e419b36a6fd2401476065fda24bfd4fb7a4ad3dbd5014b1af43fe94",
+ "mentions": [
+  {
+   "entity": "rozpocet",
+   "segment": 0,
+   "t": 0.5,
+   "speaker": "Mluvčí 1",
+   "surface": "rozpočtu"
+  },
+  {
+   "entity": "alfa-trade-sro",
+   "segment": 1,
+   "t": 6.5,
+   "speaker": "Mluvčí 1",
+   "surface": "Alfa Trade"
+  }
+ ]
+}

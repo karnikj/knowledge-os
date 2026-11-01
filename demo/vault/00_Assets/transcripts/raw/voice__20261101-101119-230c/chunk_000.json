@@ -1,0 +1,30 @@
+{
+ "engine": "demo-stt",
+ "prompt_version": 1,
+ "index": 0,
+ "start": 0.0,
+ "end": 18.0135,
+ "check": {
+  "attempts": 1
+ },
+ "segments": [
+  {
+   "start": 0.5,
+   "end": 6,
+   "speaker": "Mluvčí 1",
+   "text": "Nápad pro klienty: udělat půldenní workshop o AI agentech pro vedení malých firem."
+  },
+  {
+   "start": 6.5,
+   "end": 12,
+   "speaker": "Mluvčí 1",
+   "text": "Ukázat na vlastním příkladu, jak agent zpracuje faktury a připraví podklady pro cash-flow."
+  },
+  {
+   "start": 12.5,
+   "end": 18,
+   "speaker": "Mluvčí 1",
+   "text": "Zeptat se Evy Malé z Alfa Trade, jestli by workshop chtěli jako první."
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "engine": "demo-analysis",
+  "prompt_version": 1,
+  "input": "774df6901ba51d4c"
+ },
+ "result": {
+  "tldr": "AI agenti v malých firmách potřebují jasná pravidla; náklady na modely jsou nízké, drahá je nepřipravenost.",
+  "key_points": [
+   "**Pravidla**: co agent smí rozhodnout sám",
+   "**Náklady**: haléře za dotaz, drahé je nasazení bez procesů"
+  ],
+  "topics": [
+   "AI agenti",
+   "Efektivita"
+  ],
+  "dominant_volatility": "medium"
+ }
+}

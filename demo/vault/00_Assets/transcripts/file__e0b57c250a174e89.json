@@ -1,0 +1,72 @@
+{
+ "schema_version": 1,
+ "source_id": "file:e0b57c250a174e89",
+ "source_version": 1,
+ "content_hash": "sha256:8f8f575a2648c7ca1dae70dced1d8592f3a695fd55f34b6cf2526847e4c7f503",
+ "engine": "doc-v1",
+ "stt_prompt_version": 0,
+ "language": "cs",
+ "duration_s": 0.0,
+ "created_at": "2026-11-01T10:11:27",
+ "meta": {
+  "kind": "document",
+  "title": "[DEMO] Postup pro zaučení nového kolegy",
+  "format": "md",
+  "pages": 0,
+  "chars": 379,
+  "filename": "postup-zauceni.md",
+  "url": null,
+  "visibility": "public",
+  "added": "2026-11-01T10:11:27",
+  "asset": "00_Assets/documents/e0b57c250a174e89.md",
+  "bytes": 519,
+  "file_hash": "e0b57c250a174e89360d883b0d02554250c11d896b36a9a7241d6b4530595c50",
+  "origin": "web",
+  "watch": false,
+  "checked_at": null
+ },
+ "speakers": {
+  "S0": "[DEMO] Postup pro zaučení nového kolegy › První den",
+  "S1": "[DEMO] Postup pro zaučení nového kolegy › První týden",
+  "S2": "[DEMO] Postup pro zaučení nového kolegy › První měsíc"
+ },
+ "stt_quality": {
+  "status": "DOC_OK",
+  "reasons": []
+ },
+ "segments": [
+  {
+   "i": 0,
+   "start": 0.0,
+   "end": 0.0,
+   "speaker": "S0",
+   "text": "Nový kolega dostane přístup do e-mailu, sdíleného disku a znalostní báze. Projde si zápisy z posledních tří porad.",
+   "time_source": "none",
+   "llm_start": null,
+   "llm_end": null,
+   "chunk": 0
+  },
+  {
+   "i": 1,
+   "start": 0.0,
+   "end": 0.0,
+   "speaker": "S1",
+   "text": "Zaučující kolega ukáže postup zpracování objednávky a schvalování faktur. Nový kolega si vede poznámky přímo do znalostní\nbáze (hlasové poznámky z telefonu stačí).",
+   "time_source": "none",
+   "llm_start": null,
+   "llm_end": null,
+   "chunk": 0
+  },
+  {
+   "i": 2,
+   "start": 0.0,
+   "end": 0.0,
+   "speaker": "S2",
+   "text": "Samostatně zpracuje první zakázku. Na konci měsíce krátká porada: co chybělo v dokumentaci, se doplní.",
+   "time_source": "none",
+   "llm_start": null,
+   "llm_end": null,
+   "chunk": 0
+  }
+ ]
+}

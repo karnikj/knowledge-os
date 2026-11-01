@@ -1,0 +1,57 @@
+# Šablona zápisu ze schůzky (upravuje se v aplikaci → Schůzky → Šablony).
+# Typy polí: short = krátký text, text = delší text, datetime = datum a čas, people = osoby, list = seznam bodů, topics = projednané body (bod + popis), tasks = úkoly (co / kdo / do kdy)
+id: zapis
+name: Zápis ze schůzky JK
+fields:
+- id: nazev
+  label: Název schůzky
+  type: short
+  ai: Krátký věcný název podle hlavního tématu, pokud ho uživatel nezadal.
+- id: datum
+  label: Datum a čas
+  type: datetime
+  ai: ''
+- id: firma
+  label: Firma
+  type: short
+  ai: Jméno firmy, se kterou vedu jednání.
+- id: misto
+  label: Místo / forma
+  type: short
+  ai: Jen pokud zazní (např. online, zasedačka).
+- id: ucastnici
+  label: Účastníci
+  type: people
+  ai: Jména lidí, kteří na schůzce mluví nebo jsou jmenovitě přítomni.
+- id: cil
+  label: Cíl schůzky
+  type: text
+  ai: Jednou až dvěma větami, proč se schůzka konala.
+- id: program
+  label: Program
+  type: list
+  ai: Témata v pořadí, jak se probírala.
+- id: shrnuti
+  label: Shrnutí
+  type: text
+  ai: '3–6 vět: to nejdůležitější, co zaznělo a k čemu se došlo.'
+- id: body
+  label: Projednané body
+  type: topics
+  ai: 'Pro každý bod programu stručně: co se řešilo, jaké zazněly názory a argumenty (kdo co navrhoval).'
+- id: rozhodnuti
+  label: Rozhodnutí
+  type: list
+  ai: Jen to, na čem se účastníci skutečně shodli nebo co schválili — ne návrhy a nápady.
+- id: ukoly
+  label: Úkoly
+  type: tasks
+  ai: 'Konkrétní úkoly: co, kdo (jméno), do kdy (termín tak, jak zazněl; jinak prázdné).'
+- id: otevrene
+  label: Otevřené otázky
+  type: list
+  ai: Co zůstalo nevyřešené nebo se má dořešit.
+- id: dalsi
+  label: Další schůzka
+  type: short
+  ai: Termín / místo další schůzky, pokud zazněly.

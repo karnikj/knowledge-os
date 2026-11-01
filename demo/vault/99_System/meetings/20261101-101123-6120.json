@@ -1,0 +1,237 @@
+{
+ "id": "20261101-101123-6120",
+ "template": {
+  "id": "schuzka",
+  "name": "Zápis ze schůzky",
+  "fields": [
+   {
+    "id": "nazev",
+    "label": "Název / téma schůzky",
+    "type": "short",
+    "ai": "Krátký věcný název podle hlavního tématu, pokud ho uživatel nezadal."
+   },
+   {
+    "id": "firma",
+    "label": "Firma / klient",
+    "type": "short",
+    "ai": "Firma (klient, partner), se kterou se jednání vede — jen pokud zazní nebo je zřejmá."
+   },
+   {
+    "id": "datum",
+    "label": "Datum a čas",
+    "type": "datetime",
+    "ai": ""
+   },
+   {
+    "id": "misto",
+    "label": "Místo / forma",
+    "type": "short",
+    "ai": "Jen pokud zazní (např. osobně u klienta, online Teams, zasedačka)."
+   },
+   {
+    "id": "ucastnici",
+    "label": "Účastníci",
+    "type": "people",
+    "ai": "Každý účastník zvlášť ve tvaru „Jméno Příjmení, firma“. Firmu uveď, jen pokud zazní nebo je zřejmá z kontextu."
+   },
+   {
+    "id": "cil",
+    "label": "Program / cíl schůzky",
+    "type": "text",
+    "ai": "Stručně, co se má projednat. Obvykle vyplní uživatel před schůzkou — pokud je prázdné, doplň podle úvodu schůzky."
+   },
+   {
+    "id": "shrnuti",
+    "label": "Shrnutí",
+    "type": "text",
+    "ai": "Krátké shrnutí celého jednání (3–6 vět). Na konci jasně uveď hlavní výsledek schůzky."
+   },
+   {
+    "id": "body",
+    "label": "Projednané body",
+    "type": "topics",
+    "ai": "Jednotlivá témata. Pod každým stručný věcný zápis: fakta, názory a informace, které na schůzce skutečně zazněly (kdo co uvedl). Nic nedomýšlej."
+   },
+   {
+    "id": "rozhodnuti",
+    "label": "Rozhodnutí a závěry",
+    "type": "list",
+    "ai": "Co bylo dohodnuto, co schváleno, co odloženo; případně kdo s čím souhlasil. Každou položku začni slovem Dohodnuto / Schváleno / Odloženo. Ne návrhy a nápady."
+   },
+   {
+    "id": "ukoly",
+    "label": "Úkoly a další kroky",
+    "type": "tasks",
+    "ai": "Každý úkol, který na schůzce zazněl: kdo má co udělat, zaslat, doplnit, upřesnit, definovat nebo dodat (dokumenty, data, nabídky). Co = konkrétně co, kdo = jméno, do kdy = termín, pokud zazněl (i přibližný, např. do pátku); jinak nech prázdné. Nic nevymýšlej."
+   },
+   {
+    "id": "otevrene",
+    "label": "Otevřené otázky",
+    "type": "list",
+    "ai": "Otázky, které zůstaly nevyřešené; informace, které je potřeba doplnit; témata odložená na další jednání."
+   },
+   {
+    "id": "dalsi",
+    "label": "Další jednání",
+    "type": "text",
+    "ai": "Jen pokud bylo domluveno: termín a účel (co se bude řešit). Jinak nech prázdné."
+   }
+  ]
+ },
+ "status": "approved",
+ "created": "2026-11-01T10:11:23",
+ "values": {
+  "nazev": {
+   "text": "[DEMO] Zavedení AI asistenta do účtárny",
+   "segs": [],
+   "ai": false
+  },
+  "firma": {
+   "text": "",
+   "segs": [],
+   "ai": false
+  },
+  "datum": {
+   "text": "1. 11. 2026 10:11",
+   "segs": [],
+   "ai": false
+  },
+  "misto": {
+   "text": "Zasedačka Alfa Trade, Praha",
+   "segs": [],
+   "ai": true
+  },
+  "ucastnici": [
+   {
+    "text": "Petr Novák, Alfa Trade s.r.o.",
+    "segs": [],
+    "ai": false
+   },
+   {
+    "text": "Eva Malá, Alfa Trade s.r.o.",
+    "segs": [],
+    "ai": false
+   }
+  ],
+  "cil": {
+   "text": "Domluvit pilotní nasazení AI asistenta pro zpracování přijatých faktur.",
+   "segs": [
+    0
+   ],
+   "ai": true
+  },
+  "shrnuti": {
+   "text": "Alfa Trade trápí ruční přepisování přijatých faktur, které denně zabere hodinu práce. Dohodli jsme tříměsíční pilot: asistent faktury vytěží, ověří dodavatele a faktury nad 50 000 Kč pošle ke schválení. Data zůstanou na serveru klienta. Hlavní výsledek: pilot začne 1. listopadu.",
+   "segs": [
+    1,
+    3,
+    4,
+    7
+   ],
+   "ai": true
+  },
+  "body": [
+   {
+    "bod": "Současný stav",
+    "text": "",
+    "segs": [
+     1,
+     2
+    ],
+    "ai": true
+   },
+   {
+    "bod": "Návrh pilotu",
+    "text": "",
+    "segs": [
+     3
+    ],
+    "ai": true
+   },
+   {
+    "bod": "Ochrana dat",
+    "text": "",
+    "segs": [
+     6,
+     7
+    ],
+    "ai": true
+   }
+  ],
+  "rozhodnuti": [
+   {
+    "text": "Pilot začne 1. listopadu.",
+    "segs": [
+     4
+    ],
+    "ai": true
+   },
+   {
+    "text": "Schvalovací limit 50 000 Kč.",
+    "segs": [
+     4
+    ],
+    "ai": true
+   }
+  ],
+  "ukoly": [
+   {
+    "co": "Připravit nabídku a harmonogram pilotu",
+    "kdo": "Jana Nováková",
+    "termin": "pátek",
+    "segs": [
+     5
+    ],
+    "ai": true,
+    "hotovo": false
+   },
+   {
+    "co": "Poslat 10 ukázkových faktur",
+    "kdo": "Eva Malá",
+    "termin": "zítra",
+    "segs": [
+     5,
+     6
+    ],
+    "ai": true,
+    "hotovo": false
+   },
+   {
+    "co": "Popsat v nabídce uložení dat (GDPR)",
+    "kdo": "Jana Nováková",
+    "termin": "",
+    "segs": [
+     7
+    ],
+    "ai": true,
+    "hotovo": false
+   }
+  ],
+  "otevrene": [],
+  "dalsi": {
+   "text": "",
+   "segs": [],
+   "ai": false
+  }
+ },
+ "suggestions": {},
+ "speakers": {
+  "S0": "Jana Nováková",
+  "S1": "Petr Novák",
+  "S2": "Eva Malá"
+ },
+ "session": null,
+ "source_id": "meeting:20261101-101123-6120",
+ "error": null,
+ "review_until": null,
+ "approved_at": "2026-11-01T10:11:27",
+ "auto_approved": false,
+ "card": "14_Internal/Schuzky/2026-11-01 - [DEMO] Zavedení AI asistenta do účtárny.md",
+ "updated_at": "2026-11-01T10:11:27",
+ "speaker_labels": {
+  "S0": "Mluvčí 1",
+  "S1": "Mluvčí 2",
+  "S2": "Mluvčí 3"
+ },
+ "processed_at": "2026-11-01T10:11:27"
+}

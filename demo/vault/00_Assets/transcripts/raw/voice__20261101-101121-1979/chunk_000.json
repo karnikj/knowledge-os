@@ -1,0 +1,24 @@
+{
+ "engine": "demo-stt",
+ "prompt_version": 1,
+ "index": 0,
+ "start": 0.0,
+ "end": 13.0135,
+ "check": {
+  "attempts": 1
+ },
+ "segments": [
+  {
+   "start": 0.5,
+   "end": 7,
+   "speaker": "Mluvčí 1",
+   "text": "Z dnešního podcastu si beru jedno: agenti v účetnictví dávají smysl jen tam, kde jsou jasná pravidla schvalování."
+  },
+  {
+   "start": 7.5,
+   "end": 13,
+   "speaker": "Mluvčí 1",
+   "text": "Bez pravidel to firma nasadí a za měsíc to vypne. Napsat o tom krátký článek na web."
+  }
+ ]
+}

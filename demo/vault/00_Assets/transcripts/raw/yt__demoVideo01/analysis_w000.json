@@ -1,0 +1,68 @@
+{
+ "key": {
+  "engine": "demo-analysis",
+  "prompt_version": 1,
+  "input": "432addedab965314"
+ },
+ "result": {
+  "summary": "Rozhovor o nasazení AI agentů v malých firmách.",
+  "chapters": [
+   {
+    "segment": 0,
+    "title": "Úvod"
+   },
+   {
+    "segment": 1,
+    "title": "Pravidla pro agenty"
+   },
+   {
+    "segment": 3,
+    "title": "Náklady"
+   }
+  ],
+  "claims": [
+   {
+    "speaker": "Jan Novák",
+    "segment_ids": [
+     1
+    ],
+    "quote": "firma nasadí agenta a nemá pravidla, co smí rozhodnout sám",
+    "claim": "Firmy často nasazují agenty bez pravidel, co smí rozhodnout samy.",
+    "type": "opinion",
+    "volatility": "medium",
+    "attitudes": []
+   },
+   {
+    "speaker": "Jan Novák",
+    "segment_ids": [
+     4
+    ],
+    "quote": "Náklady na modely jsou dnes haléře za dotaz",
+    "claim": "Náklady na AI modely jsou haléře za dotaz; drahé je nasazení bez přípravy.",
+    "type": "fact",
+    "volatility": "high",
+    "attitudes": []
+   }
+  ],
+  "mentions": [
+   {
+    "segment": 2,
+    "surface": "Beta Logistik",
+    "name": "Beta Logistik",
+    "type": "organizace"
+   },
+   {
+    "segment": 0,
+    "surface": "Vítejte",
+    "name": "Jan Novák",
+    "type": "osoba"
+   },
+   {
+    "segment": 0,
+    "surface": "AI agentů",
+    "name": "AI agenti",
+    "type": "tema"
+   }
+  ]
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "schema_version": 1,
+ "source_id": "meeting:20261101-101123-6120",
+ "source_version": 1,
+ "content_hash": "sha256:fed1d3146c7370c88f2c754e680c930f17ec5208e1fc914d5205289b6f1e9266",
+ "engine": "demo-stt",
+ "stt_prompt_version": 1,
+ "language": "cs",
+ "duration_s": 63.01,
+ "created_at": "2026-11-01T09:11:27+00:00",
+ "meta": {
+  "title": "[DEMO] Zavedení AI asistenta do účtárny",
+  "channel": "Schůzka",
+  "upload_date": "20261101"
+ },
+ "speakers": {
+  "S0": "Jana Nováková",
+  "S1": "Petr Novák",
+  "S2": "Eva Malá"
+ },
+ "stt_quality": {
+  "status": "STT_OK",
+  "reasons": [],
+  "audio_coverage": 0.92,
+  "speech_coverage": 0.92,
+  "unexplained_gaps": [],
+  "overlap_duplicates": 0,
+  "words": 127,
+  "vtt_words": null,
+  "vtt_word_ratio": null,
+  "aligned_share": 0.0,
+  "alignment_confidence_mean": null
+ },
+ "segments": [
+  {
+   "i": 0,
+   "start": 0.5,
+   "end": 7.0,
+   "speaker": "S0",
+   "text": "Dobrý den, děkuji, že jste přišli. Dnes probereme zavedení AI asistenta do účtárny Alfa Trade.",
+   "time_source": "llm",
+   "llm_start": 0.5,
+   "llm_end": 7.0,
+   "chunk": 0
+  },
+  {
+   "i": 1,
+   "start": 7.5,
+   "end": 15.0,
+   "speaker": "S1",
+   "text": "Za Alfa Trade nás nejvíc trápí přijaté faktury. Chodí e-mailem a Eva je ručně přepisuje do systému.",
+   "time_source": "llm",
+   "llm_start": 7.5,
+   "llm_end": 15.0,
+   "chunk": 0
+  },
+  {
+   "i": 2,
+   "start": 15.5,
+   "end": 23.0,
+   "speaker": "S2",
+   "text": "Je to tak, denně je to hodina práce a občas se něco ztratí. Chtěli bychom, aby to kontroloval automat.",
+   "time_source": "llm",
+   "llm_start": 15.5,
+   "llm_end": 23.0,
+   "chunk": 0
+  },
+  {
+   "i": 3,
+   "start": 23.5,
+   "end": 32.0,
+   "speaker": "S0",
+   "text": "Navrhuji pilot na tři měsíce. Asistent faktury vytěží, ověří dodavatele a nad padesát tisíc pošle ke schválení Petrovi.",
+   "time_source": "llm",
+   "llm_start": 23.5,
+   "llm_end": 32.0,
+   "chunk": 0
+  },
+  {
+   "i": 4,
+   "start": 32.5,
+   "end": 40.0,
+   "speaker": "S1",
+   "text": "Souhlasím. Limit padesát tisíc je v pořádku. Rozhodli jsme, že pilot začne od prvního listopadu.",
+   "time_source": "llm",
+   "llm_start": 32.5,
+   "llm_end": 40.0,
+   "chunk": 0
+  },
+  {
+   "i": 5,
+   "start": 40.5,
+   "end": 48.0,
+   "speaker": "S0",
+   "text": "Já připravím nabídku a harmonogram do pátku. Evo, pošlete mi prosím deset ukázkových faktur.",
+   "time_source": "llm",
+   "llm_start": 40.5,
+   "llm_end": 48.0,
+   "chunk": 0
+  },
+  {
+   "i": 6,
+   "start": 48.5,
+   "end": 54.0,
+   "speaker": "S2",
+   "text": "Pošlu je zítra. A chtěla bych vědět, kam se ukládají data, kvůli GDPR.",
+   "time_source": "llm",
+   "llm_start": 48.5,
+   "llm_end": 54.0,
+   "chunk": 0
+  },
+  {
+   "i": 7,
+   "start": 54.5,
+   "end": 62.0,
+   "speaker": "S0",
+   "text": "Data zůstanou na vašem serveru, ven odchází jen text faktury k vytěžení. Popíšu to v nabídce.",
+   "time_source": "llm",
+   "llm_start": 54.5,
+   "llm_end": 62.0,
+   "chunk": 0
+  }
+ ]
+}

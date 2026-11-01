@@ -1,0 +1,51 @@
+# Konfigurace Knowledge OS. Přepisuje výchozí hodnoty z pipeline/settings.py (tam jsou všechny klíče s komentářem).
+#
+# Modely jsou SOUČÁSTKA: který model co dělá, určuje jen tento soubor. Doporučené nastavení používá OpenRouter
+# (jeden klíč OPENROUTER_API_KEY v .env, platí se jen skutečné použití). Bez bloků `youtube` / `private` / `chat`
+# se použije Google Gemini přes GEMINI_API_KEY (bezplatný tier má denní limity).
+#
+# Rozdělení cest:
+#   youtube  = veřejná videa (přepis a analýza)
+#   private  = hlasové poznámky, schůzky, soukromé dokumenty a chat nad nimi
+#   chat     = otázky nad veřejnými zdroji
+# U soukromých dat můžete zvolit jiného poskytovatele (např. s přísnějšími podmínkami pro data) jen změnou bloku `private`.
+
+stt:                                   # přepis řeči na text
+  youtube:
+    provider: openrouter
+    model: google/gemini-2.5-flash-lite          # rozliší mluvčí, 5 min audia za ~12 s, ~1 Kč za hodinu
+    fallback_models: [google/gemini-3.1-flash-lite, qwen/qwen3.8-omni-flash]
+  private:
+    provider: openrouter
+    model: google/gemini-2.5-flash-lite
+    fallback_models: [google/gemini-3.1-flash-lite]
+  # záložní cesta přes Gemini API (GEMINI_API_KEY), použije se bez OpenRouteru:
+  model: gemini-2.5-flash
+  fallback_models: []
+
+analysis:                              # shrnutí, tvrzení, zmínky, zápisy, karty dokumentů, odpovědi v chatu
+  youtube:
+    provider: openrouter
+    model: deepseek/deepseek-v4-flash            # levný a rychlý; ~0,07 $ / 1M vstupních tokenů
+    fallback_models: [deepseek/deepseek-v3.2, google/gemini-2.5-flash-lite]
+  chat:
+    provider: openrouter
+    model: deepseek/deepseek-v4-flash
+    fallback_models: [deepseek/deepseek-v3.2]
+  private:
+    provider: openrouter
+    model: deepseek/deepseek-v4-flash
+    fallback_models: [deepseek/deepseek-v3.2, google/gemini-2.5-flash-lite]
+  model: gemini-2.5-flash
+  fallback_models: []
+  window_chars: 12000                  # délka úseku přepisu na jedno volání analýzy
+
+vectors:                               # hledání podle významu: lokální model, nic neodchází ven, bez GPU
+  enabled: true
+  model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  threads: 2
+
+branding:                              # hlavička zápisu ze schůzky a patička PDF
+  owner: Knowledge OS                  # např. jméno nebo firma
+  subtitle: ""                         # např. „Finanční řízení“
+  logo: /static/logo.svg               # vlastní logo: nahrajte SVG do pipeline/web/static/ a změňte cestu

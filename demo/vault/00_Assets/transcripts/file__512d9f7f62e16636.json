@@ -1,0 +1,96 @@
+{
+ "schema_version": 1,
+ "source_id": "file:512d9f7f62e16636",
+ "source_version": 1,
+ "content_hash": "sha256:b039ca1424018d31e15e108d0a934e06d88531c9c686efde0fbe048a632d2e42",
+ "engine": "doc-v1",
+ "stt_prompt_version": 0,
+ "language": "cs",
+ "duration_s": 0.0,
+ "created_at": "2026-11-01T10:11:27",
+ "meta": {
+  "kind": "document",
+  "title": "[DEMO] Směrnice o schvalování přijatých faktur",
+  "format": "md",
+  "pages": 0,
+  "chars": 736,
+  "filename": "smernice-schvalovani-faktur.md",
+  "url": null,
+  "visibility": "private",
+  "added": "2026-11-01T10:11:27",
+  "asset": "00_Assets/documents/512d9f7f62e16636.md",
+  "bytes": 958,
+  "file_hash": "512d9f7f62e16636cbbb70bc104ecc3152292115509f3b782369a46e3a9bcc19",
+  "origin": "web",
+  "watch": false,
+  "checked_at": null
+ },
+ "speakers": {
+  "S0": "[DEMO] Směrnice o schvalování přijatých faktur › 1. Účel",
+  "S1": "[DEMO] Směrnice o schvalování přijatých faktur › 2. Příjem faktur",
+  "S2": "[DEMO] Směrnice o schvalování přijatých faktur › 3. Kontrola",
+  "S3": "[DEMO] Směrnice o schvalování přijatých faktur › 4. Schvalování",
+  "S4": "[DEMO] Směrnice o schvalování přijatých faktur › 5. Splatnost"
+ },
+ "stt_quality": {
+  "status": "DOC_OK",
+  "reasons": []
+ },
+ "segments": [
+  {
+   "i": 0,
+   "start": 0.0,
+   "end": 0.0,
+   "speaker": "S0",
+   "text": "Směrnice stanoví postup příjmu, kontroly a schvalování přijatých faktur ve společnosti Alfa Trade s.r.o.",
+   "time_source": "none",
+   "llm_start": null,
+   "llm_end": null,
+   "chunk": 0
+  },
+  {
+   "i": 1,
+   "start": 0.0,
+   "end": 0.0,
+   "speaker": "S1",
+   "text": "Faktury přicházejí na adresu faktury@ (e-mail) nebo datovou schránkou. Účetní je do dvou pracovních dnů zaeviduje.",
+   "time_source": "none",
+   "llm_start": null,
+   "llm_end": null,
+   "chunk": 0
+  },
+  {
+   "i": 2,
+   "start": 0.0,
+   "end": 0.0,
+   "speaker": "S2",
+   "text": "Před schválením se ověří: existence dodavatele v registru (ARES), registrace k DPH, shoda částky s objednávkou a správnost\nbankovního účtu. Faktura s neznámým účtem se nikdy neproplácí bez telefonického ověření u dodavatele.",
+   "time_source": "none",
+   "llm_start": null,
+   "llm_end": null,
+   "chunk": 0
+  },
+  {
+   "i": 3,
+   "start": 0.0,
+   "end": 0.0,
+   "speaker": "S3",
+   "text": "Faktury do 50 000 Kč schvaluje vedoucí účtárny. Faktury nad 50 000 Kč schvaluje jednatel. Schválení se zaznamená\ndo systému s datem a jménem schvalovatele.",
+   "time_source": "none",
+   "llm_start": null,
+   "llm_end": null,
+   "chunk": 0
+  },
+  {
+   "i": 4,
+   "start": 0.0,
+   "end": 0.0,
+   "speaker": "S4",
+   "text": "Schválené faktury se hradí ve splatnosti, nejdříve však 5 dní před splatností. Každé pondělí účetní předkládá přehled\nfaktur po splatnosti.",
+   "time_source": "none",
+   "llm_start": null,
+   "llm_end": null,
+   "chunk": 0
+  }
+ ]
+}

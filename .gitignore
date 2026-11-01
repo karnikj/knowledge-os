@@ -1,0 +1,34 @@
+# Tajné údaje — nikdy do Gitu
+.env
+14_Internal/Confidential/*
+!14_Internal/Confidential/.gitkeep
+*cookies*.txt
+
+# Velké binární soubory (originály audia jen lokálně)
+00_Assets/audio/*
+!00_Assets/audio/.gitkeep
+00_Assets/audio_opus/*
+!00_Assets/audio_opus/.gitkeep
+00_Assets/chunks_tmp/
+
+# Odvozené / lokální (index jde kdykoli přestavět: python -m pipeline reindex)
+99_System/index/*.sqlite
+99_System/index/*.tmp
+99_System/logs/*
+!99_System/logs/.gitkeep
+99_System/runner/
+18_Inbox_Hlas/*/
+
+# Obsidian — stav okna se liší na každém PC
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.trash/
+
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+venv/
+*.egg-info/

@@ -1,0 +1,56 @@
+00_Assets/documents/512d9f7f62e16636.md
+00_Assets/documents/e0b57c250a174e89.md
+00_Assets/meetings/20261101-101123-6120.opus
+00_Assets/transcripts/file__512d9f7f62e16636.analysis.json
+00_Assets/transcripts/file__512d9f7f62e16636.json
+00_Assets/transcripts/file__512d9f7f62e16636.mentions.json
+00_Assets/transcripts/file__e0b57c250a174e89.analysis.json
+00_Assets/transcripts/file__e0b57c250a174e89.json
+00_Assets/transcripts/file__e0b57c250a174e89.mentions.json
+00_Assets/transcripts/meeting__20261101-101123-6120.json
+00_Assets/transcripts/meeting__20261101-101123-6120.md
+00_Assets/transcripts/raw/meeting__20261101-101123-6120/chunk_000.json
+00_Assets/transcripts/raw/voice__20261101-101119-230c/analysis_summary.json
+00_Assets/transcripts/raw/voice__20261101-101119-230c/analysis_w000.json
+00_Assets/transcripts/raw/voice__20261101-101119-230c/chunk_000.json
+00_Assets/transcripts/raw/voice__20261101-101121-1979/analysis_summary.json
+00_Assets/transcripts/raw/voice__20261101-101121-1979/analysis_w000.json
+00_Assets/transcripts/raw/voice__20261101-101121-1979/chunk_000.json
+00_Assets/transcripts/raw/voice__20261101-101122-c039/analysis_summary.json
+00_Assets/transcripts/raw/voice__20261101-101122-c039/analysis_w000.json
+00_Assets/transcripts/raw/voice__20261101-101122-c039/chunk_000.json
+00_Assets/transcripts/raw/yt__demoVideo01/analysis_summary.json
+00_Assets/transcripts/raw/yt__demoVideo01/analysis_w000.json
+00_Assets/transcripts/voice__20261101-101119-230c.analysis.json
+00_Assets/transcripts/voice__20261101-101119-230c.json
+00_Assets/transcripts/voice__20261101-101119-230c.md
+00_Assets/transcripts/voice__20261101-101119-230c.mentions.json
+00_Assets/transcripts/voice__20261101-101121-1979.analysis.json
+00_Assets/transcripts/voice__20261101-101121-1979.json
+00_Assets/transcripts/voice__20261101-101121-1979.md
+00_Assets/transcripts/voice__20261101-101121-1979.mentions.json
+00_Assets/transcripts/voice__20261101-101122-c039.analysis.json
+00_Assets/transcripts/voice__20261101-101122-c039.json
+00_Assets/transcripts/voice__20261101-101122-c039.md
+00_Assets/transcripts/voice__20261101-101122-c039.mentions.json
+00_Assets/transcripts/yt__demoVideo01.analysis.json
+00_Assets/transcripts/yt__demoVideo01.json
+00_Assets/transcripts/yt__demoVideo01.mentions.json
+00_Assets/voice/20261101-101119-230c.opus
+00_Assets/voice/20261101-101121-1979.opus
+00_Assets/voice/20261101-101122-c039.opus
+01_Zdroje/2026-07-08 - Demo podcast - [DEMO] Jak AI agenti zvyšují efektivitu v malých firmách.md
+01_Zdroje/Dokumenty/[DEMO] Postup pro zaučení nového kolegy.md
+14_Internal/Dokumenty/[DEMO] Směrnice o schvalování přijatých faktur.md
+14_Internal/Schuzky/2026-11-01 - [DEMO] Zavedení AI asistenta do účtárny.md
+14_Internal/VoiceNotes/20261101-1011 - [DEMO] Nápad na workshop.md
+14_Internal/VoiceNotes/20261101-1011 - [DEMO] Postřeh z podcastu.md
+14_Internal/VoiceNotes/20261101-1011 - [DEMO] Připomínka k rozpočtu.md
+99_System/meetings/20261101-101123-6120.json
+99_System/state/file__512d9f7f62e16636.json
+99_System/state/file__e0b57c250a174e89.json
+99_System/state/meeting__20261101-101123-6120.json
+99_System/state/voice__20261101-101119-230c.json
+99_System/state/voice__20261101-101121-1979.json
+99_System/state/voice__20261101-101122-c039.json
+99_System/state/yt__demoVideo01.json
