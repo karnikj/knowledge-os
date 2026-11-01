@@ -9,7 +9,7 @@ pytest>=8.0
 fastapi>=0.110
 uvicorn>=0.29
 python-multipart>=0.0.9
-weasyprint>=62            # PDF zápisů ze schůzek (VPS: apt libpango-1.0-0 libpangoft2-1.0-0 fonts-dejavu-core)   # sdílení z Androidu (share target = formulář)
+weasyprint>=62            # PDF zápisů ze schůzek (VPS: apt libpango-1.0-0 libpangoft2-1.0-0 fonts-dejavu-core)
 httpx>=0.27
 # Windows: pokud yt-dlp hlásí SSL chyby, doinstalujte pip-system-certs
 # dokumenty a hybridní hledání

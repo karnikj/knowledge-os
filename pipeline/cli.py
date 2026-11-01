@@ -22,6 +22,10 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="python -m pipeline", description="Knowledge OS pipeline")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
+    p = sub.add_parser("setup", help="průvodce první instalací (nástroje, klíč, složky, ukázková data)")
+    p.add_argument("--yes", action="store_true", help="bez otázek (klíč se do .env doplní ručně)")
+    p.add_argument("--demo", action="store_true", help="rovnou načíst ukázková data")
+
     p = sub.add_parser("doctor", help="kontrola prostředí a vaultu")
     p.add_argument("--online", action="store_true", help="ověřit i spojení s Gemini API")
     p.add_argument("--probe", action="store_true", help="s --online: poslat každému modelu krátký testovací dotaz")
@@ -111,6 +115,9 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     vault = Vault.default()
 
+    if args.cmd == "setup":
+        from pipeline import setup
+        return setup.main(vault, non_interactive=args.yes, demo=True if args.demo else None)
     if args.cmd == "doctor":
         if args.probe:
             import os

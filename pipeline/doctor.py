@@ -121,7 +121,7 @@ def run(vault: Vault, online: bool = False) -> list[Check]:
     for e in src:
         fm = frontmatter.parse(e.path.read_text(encoding="utf-8")[:8192])
         ap = fm.get("asset_path")
-        if ap and not (vault.root / ap).exists():
+        if ap and not (vault.root / ap).exists() and not str(e.source_id).startswith("yt:demoVideo"):
             missing_audio.append(e.source_id)
     c.append(Check("originální audio na tomto PC", WARN if missing_audio else OK,
                    ("chybí: " + ", ".join(missing_audio)) if missing_audio else ""))

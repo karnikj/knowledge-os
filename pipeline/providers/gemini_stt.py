@@ -207,7 +207,8 @@ class GeminiSTT:
             from google import genai
             key = os.getenv("GEMINI_API_KEY")
             if not key:
-                raise ValueError("Chybí GEMINI_API_KEY (.env v kořeni vaultu).")
+                raise ValueError("Chybí klíč k AI modelům: OPENROUTER_API_KEY nebo GEMINI_API_KEY v .env "
+                                 "(python -m pipeline setup).")
             self._client = genai.Client(api_key=key, http_options={"timeout": 300000})  # ms; zaseknutý požadavek → nový pokus / záložní model
         return self._client
 

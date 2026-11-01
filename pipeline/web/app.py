@@ -189,6 +189,9 @@ def create_app(vault: Vault | None = None) -> FastAPI:
                                          "nebo schůzek, ty jdou jen přes Gemini). Zkuste to zítra.")
             if isinstance(e, BillingError):
                 raise HTTPException(402, "Došel kredit na OpenRouteru (openrouter.ai → Credits).")
+            if isinstance(e, ValueError) and "API_KEY" in str(e):
+                raise HTTPException(400, "Chybí klíč k AI modelům. Doplňte OPENROUTER_API_KEY do .env "
+                                         "(python -m pipeline setup) a restartujte aplikaci. Hledání funguje i bez klíče.")
             if classify(e) in ("overloaded", "transient", "rate"):
                 raise HTTPException(503, "Model je teď přetížený, zkuste to za chvíli.")
             raise

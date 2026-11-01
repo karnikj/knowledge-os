@@ -14,6 +14,9 @@ v uzavřené síti a AI modely se dají vyměnit v jednom konfiguračním soubor
 > OpenRouter or Google Gemini. Runs on a small VPS behind Tailscale; no public ports. Documentation is in Czech;
 > the code and configuration are commented in Czech. MIT licence.
 
+> **Začínáte?** Otevřete [`docs/PRUVODCE.md`](docs/PRUVODCE.md): krok za krokem od nuly k běžící bázi, psáno pro člověka
+> bez IT znalostí ve dvojici s AI asistentem (Claude Code apod.). `CLAUDE.md` říká asistentovi, jak průvodce vést.
+
 ## Co umí
 
 | Oblast | Funkce |
@@ -71,12 +74,12 @@ cd knowledge-os
 python -m venv .venv && . .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env                                 # doplňte OPENROUTER_API_KEY (nebo GEMINI_API_KEY)
-python -m pipeline doctor                            # kontrola prostředí
-python demo/load.py                                  # volitelně: ukázková data [DEMO]
+python -m pipeline setup                             # průvodce: nástroje, klíč (skrytě), složky, ukázková data
 python -m pipeline web                               # http://127.0.0.1:8080
 ```
 
 Potřebujete Python 3.10+, `ffmpeg` v PATH a klíč k AI modelům. Ukázková data odstraníte příkazem `python demo/remove.py`.
+Podrobně, včetně toho, kde klíč a účty získat: `docs/PRUVODCE.md`.
 Plnohodnotný provoz (telefon, nahrávání na pozadí, worker, sdílení v týmu) popisuje návod na instalaci na VPS.
 
 ## Struktura repozitáře

@@ -2,6 +2,7 @@
 
 Pro toho, kdo si chce systém postavit sám: na PC pro zkoušku, nebo na vlastním serveru pro každodenní provoz
 z telefonu i počítače. Uživatelská část (co aplikace umí a jak se používá) je v [`UZIVATELSKY_MANUAL.md`](UZIVATELSKY_MANUAL.md).
+Nejste technik? Začněte průvodcem [`PRUVODCE.md`](PRUVODCE.md), ten vás provede krok za krokem i s AI asistentem.
 
 ## 1. Architektura
 
@@ -95,8 +96,8 @@ cd knowledge-os
 python -m venv .venv && . .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env                                   # doplňte klíč(e)
+python -m pipeline setup                               # průvodce: nástroje, klíč (zadání skryté), složky, ukázková data
 python -m pipeline doctor                              # 18 kontrol: nástroje, balíčky, klíč, struktura vaultu
-python demo/load.py                                    # volitelně ukázková data [DEMO]
 python -m pipeline web                                 # http://127.0.0.1:8080
 ```
 
@@ -164,6 +165,7 @@ vždy `python -m pytest -q` (106 testů, bez sítě) a `python -m pipeline docto
 ## 6. Příkazová řádka
 
 ```
+python -m pipeline setup [--yes] [--demo]          průvodce první instalací
 python -m pipeline doctor [--online] [--probe]     kontrola prostředí; --online ověří i API
 python -m pipeline add URL                         přidat video do fronty
 python -m pipeline process ID…                     přepis → analýza → karta hned (bez workeru)
