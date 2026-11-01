@@ -248,7 +248,7 @@ def fetch_url(url: str) -> tuple[str, bytes]:
         raise Unsupported("Adresa musí začínat http:// nebo https://")
     try:
         r = httpx.get(url, follow_redirects=True, timeout=40,
-                      headers={"User-Agent": "Mozilla/5.0 (KnowledgeOS; +osobni znalostni baze)",
+                      headers={"User-Agent": "Mozilla/5.0 (KnowledgeOS)",
                                "Accept-Language": "cs,en;q=0.8"})
     except httpx.HTTPError as e:
         raise Unsupported(f"Stránku se nepodařilo stáhnout: {e}")

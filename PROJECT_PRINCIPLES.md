@@ -1,116 +1,88 @@
 # PROJECT_PRINCIPLES.md — Knowledge OS
 
-Projektová ústava a implementační pravidla.
-Tento dokument popisuje konkrétní technologická rozhodnutí, strukturu systému a implementační zásady pro aktuální verzi Knowledge OS.
+Projektová ústava: proč systém vypadá, jak vypadá, a která rozhodnutí se nemění. Konkrétní stav kódu popisuje
+`docs/INSTALACE.md`, práci s aplikací `docs/UZIVATELSKY_MANUAL.md`. Tento dokument odpovídá stavu k listopadu 2026;
+starší verze mluvila o plánech (Qdrant, GraphRAG, SQLite jako databáze historie), které byly nahrazeny jednodušším řešením.
 
-## Vision
-Knowledge OS je osobní výzkumná platforma.
-Cílem není ukládat informace. Cílem je:
-- budovat dlouhodobou znalostní bázi
-- sledovat vývoj názorů
-- propojovat lidi, firmy, produkty a koncepty
-- vytvářet nové syntézy
-- podporovat výzkum a rozhodování
+## Vize
 
-## Current Technology Stack
+Knowledge OS je sdílená znalostní báze pro jednotlivce a malé týmy. Cílem není ukládat informace, ale:
+- mít znalosti z porad, poznámek, dokumentů a videí na jednom místě a dohledatelné během sekund,
+- dostávat odpovědi **jen z vlastních podkladů**, s odkazem na přesné místo ve zdroji,
+- propojovat lidi, firmy, nástroje a témata napříč zdroji,
+- vydržet 5–10 let bez závislosti na konkrétním modelu, databázi nebo dodavateli.
 
-### Knowledge Layer
-- **Primary System**: Obsidian
-- **Storage Format**: Markdown with YAML Frontmatter
-- **Source of Truth**: Obsidian Vault
+## Technologický stav (skutečnost, ne plán)
 
-### AI Layer
-- **Primary Model**: Gemini Flash (API via Google AI Studio Free Tier)
-- **Use Cases**: transkripce, extrakce entit, sumáře, kapitoly, klasifikace.
-- **Fallback**: Gemini Pro
+| Vrstva | Řešení | Poznámka |
+|---|---|---|
+| Znalosti | Obsidian vault = Git repozitář; Markdown s YAML hlavičkou, JSON pro přepisy a analýzy, YAML pro entity a konfiguraci | jediný zdroj pravdy je Git |
+| AI modely | vyměnitelné přes `99_System/config/pipeline.yaml`: OpenRouter (doporučeno) nebo Google Gemini API; oddělené cesty pro veřejná videa, soukromý obsah a chat, vždy s náhradními modely | model je součástka |
+| Hledání | **hybridní RAG, implementováno**: SQLite FTS5 s českým stemmingem + hledání podle významu (lokální vícejazyčný model `paraphrase-multilingual-MiniLM-L12-v2` přes fastembed, vektory v SQLite) + zmínky entit z rejstříku; v režimu Full AI nejdřív vyřadí nesouvisející úryvky | nic z hledání neodchází ven |
+| Graf vztahů | registr entit (`entities.yaml`: aliasy, typ, nadřazená entita) + zmínky po segmentech + wiki-odkazy `[[…]]` v kartách pro Obsidian | samostatná grafová databáze není potřeba |
+| Stav a deduplikace | `99_System/state/{source_id}.json` (kroky, engine, verze promptu, hashe); katalog zdrojů se odvozuje z frontmatteru karet | žádná lokální databáze historie |
+| Aplikace | FastAPI + PWA (telefon i PC), worker na pozadí, systemd na malém VPS, přístup jen přes Tailscale | žádný veřejný port |
+| Testy | pytest: jednotkové, integrační s napodobeninami modelů, zlatý test karty; `doctor` pro prostředí | bez sítě, bez plateb |
 
-### Data Layer
-- **Metadata Database**: SQLite
-- **Purpose**: historie zpracování, stav pipeline, deduplikace.
+Záměrně **není** a neplánuje se: Qdrant ani jiná vektorová databáze (vektory v SQLite stačí do desítek tisíc úseků),
+GraphRAG, uživatelské účty a role (všichni v týmu sdílejí vše; více týmů = více instancí), vícejazyčné rozhraní.
 
-### Semantic Search & Graph
-- **Current**: Obsidian wiki links (`[[odkazy]]`) for relationships.
-- **Planned**: Qdrant (for vector search/embeddings) and GraphRAG.
-- **Trigger Condition**: GraphRAG/Qdrant will be implemented incrementally in later phases as the database scales.
+## Architektonická rozhodnutí (AD)
 
-### Testing Layer
-- **Primary Framework**: pytest
-- **Testing Approach**: pyramid pattern (unit tests, mock-based integration, regression/golden tests).
+*   **AD-001: Markdown First.** Veškerá znalost musí být reprezentovatelná v Markdownu nebo otevřeném textovém formátu.
+    Kritická znalost nikdy jen v databázi; index a vektory jsou odvozené a kdykoli přestavitelné.
+*   **AD-002: Asset Preservation.** Každý zdroj má archivovaný originál v `00_Assets/` (dokument, audio hlasu a schůzek;
+    audio videí jde znovu stáhnout, proto je mimo Git).
+*   **AD-003: Entity-Centric Design.** Systém je organizován kolem entit (lidé, firmy, nástroje, témata), zdroj je důkaz.
+    Entity žijí v jednom registru (`99_System/config/entities.yaml`), ne v souborech po jedné.
+*   **AD-004: Questions Drive Use.** Hodnota systému se měří tím, jak odpovídá na otázky; chat a hledání jsou hlavní
+    rozhraní, karty jsou pro čtení v Obsidianu.
+*   **AD-005: Temporal Knowledge Management.** Každá informace nese datum zveřejnění a odhad volatility; historie se nemaže.
+*   **AD-006: Provenance-First Design.** Žádné tvrzení bez dohledatelného původu (zdroj, segment, mluvčí, čas nebo strana).
+*   **AD-007: Versioned Data Governance.** Generované soubory nesou `schema_version` a `prompt_version`; říkají, jak
+    dokument vznikl, ne jak je kvalitní.
+*   **AD-008: Evidence Graph (budoucí).** Vztahy mezi tvrzeními (podpora, rozpor, nahrazení) zatím nejsou modelovány;
+    případně jako hrany nad stávajícími zmínkami, bez nové databáze.
+*   **AD-009: Deterministic over Generative.** Co jde získat deterministicky (metadata, datum, URL, časy, ID, verze),
+    generuje software, ne model. Model jen tam, kde je třeba porozumění.
+*   **AD-010: Knowledge Domains & Storage Separation.** Složka na disku řeší pravidla nasazení (Git, zálohy); YAML
+    metadata (`knowledge_domain`, `source_type`, `visibility`, `origin`) řeší význam. Hledání pracuje nad metadaty
+    napříč složkami.
+*   **AD-011: Test Pyramid.** Jednotkové testy deterministické logiky, integrační testy s napodobeninami modelů, zlaté
+    testy výstupů. Síť a placené služby nejsou součástí běžného testovacího běhu.
+*   **AD-012: Analysis Never Modifies the Transcript.** Přepis je strojová vrstva pravdy. Analýza je odvozená,
+    kdykoli přegenerovatelná, přepis nemění. Původ tvrzení je `segment_ids`, doslovný úryvek je lidská kontrola.
+*   **AD-013: Source Identity & Versioned State.** `source_id = namespace:stabilní_id` (`yt:`, `voice:`, `meeting:`,
+    `file:`). Deduplikace z frontmatteru karet, stav kroků v `99_System/state/`.
+*   **AD-014: Verification Is Code, Not a Model.** Citace tvrzení se ověřují deterministicky proti přepisu
+    (structural / exact / canonical / fuzzy / weak); co nesedí, do karty jde jen jako neověřené. Zmínka entity se zapíše,
+    jen když je název v segmentu přítomný. Člověk má poslední slovo u zápisů, úklidu entit a nových verzí dokumentů.
+*   **AD-015: Model Is a Component.** Který model co dělá, určuje jen konfigurace; kód nezná jména modelů. Soukromý
+    obsah může jít jinou cestou než veřejný.
+*   **AD-016: Private by Network, Not by Password.** Aplikace poslouchá jen lokálně a je dostupná jen zařízením
+    v soukromé síti (Tailscale). Klíče jen v `.env` mimo Git. Mazání vždy na dvě potvrzení, nikdy force push.
 
+## Struktura složek (skutečná)
 
-## Architecture Decisions
+- `00_Assets/` originály: `transcripts/` (JSON přepisy, analýzy, zmínky), `documents/`, `voice/`, `meetings/`, `captions/`, `audio/` (mimo Git)
+- `01_Zdroje/` karty veřejných zdrojů; `01_Zdroje/Dokumenty/` veřejné dokumenty
+- `14_Internal/` soukromé: `VoiceNotes/`, `Schuzky/`, `Dokumenty/`; `14_Internal/Confidential/` je mimo Git
+- `15_Inbox_Text/`, `16_Inbox_Dokumenty/`, `17_Inbox_Prepisy/`, `18_Inbox_Hlas/` vstupní složky
+- `99_System/` `config/` (pipeline.yaml, entities.yaml), `Slovník.md`, `templates/`, `prompts/`, `meetings/`, `state/`, `index/` (mimo Git), `logs/` (mimo Git)
+- `pipeline/` kód, `tests/`, `deploy/`, `docs/`, `demo/`
 
-*   **AD-001: Markdown First**
-    Veškeré informace musí být reprezentovatelné v Markdownu. Nikdy neukládej kritickou znalost pouze do databáze.
-*   **AD-002: Asset Preservation**
-    Každý zdroj musí mít archivovaný originál. Ukládá se do `00_Assets/`.
-*   **AD-003: Entity-Centric Design**
-    Systém je organizován kolem entit (People, Organizations, Products, Concepts), ne kolem zdrojů. Zdroj je pouze důkaz.
-*   **AD-004: Questions Drive Research**
-    Výzkum je organizován kolem otázek. Každá významná oblast má vlastní výzkumnou otázku.
-*   **AD-005: Temporal Knowledge Management (TKM)**
-    Každá informace v systému nese časový kontext (včetně volatility tématu a data zveřejnění). Při syntéze se informace hodnotí vícekriteriálně podle stáří, volatility, důvěryhodnosti zdroje a následného ověření. Historie se nemaže, ale slouží ke sledování vývoje poznání.
-*   **AD-006: Provenance-First Design**
-    Žádné tvrzení (Claim) v systému nesmí existovat bez dohledatelného původu (zdroj, kapitola, mluvčí, časový otisk). Původ je základem auditu.
-*   **AD-007: Versioned Data Governance**
-    Každý vygenerovaný dokument obsahuje verzi schématu (`schema_version`) a promptu (`prompt_version`). To minimalizuje potřebu zpětné migrace a umožňuje postupné rozšiřování schématu. Tyto verze slouží k identifikaci způsobu vzniku dokumentu, nikoli k označení jeho správnosti či kvality.
-*   **AD-008: Evidence Graph & Conflict Detection (Budoucí cíl)**
-    Vztahy mezi tvrzeními (podpora, rozpor, nahrazení) budou v budoucích fázích modelovány jako hrany v grafu. Systém bude detekovat konflikty a sledovat životní cyklus tvrzení.
-*   **AD-009: Deterministic over Generative**
-    Všechny informace, které lze získat deterministicky (metadata souboru, datum, URL, délka videa, časové značky, ID videa, verze schématu), musí být generovány softwarem, nikoliv LLM. Jazykový model se používá výhradně pro úlohy vyžadující interpretaci nebo porozumění obsahu.
-*   **AD-010: Knowledge Domains & Storage Separation**
-    Fyzická složka na disku řeší bezpečnost a pravidla nasazení (Git, zálohy, Dropbox), zatímco YAML metadata řeší sémantický význam (knowledge_domain, source_type, visibility, origin). Vyhledávání a graf pracují nad metadaty napříč složkami.
-*   **AD-011: Test Pyramid**
-    Projekt používá testovací pyramidu: pytest jednotkové testy pro deterministickou logiku (utility, parsery, validátory), integrační testy s mockovanými externími službami (Gemini) a oddělené regresní (golden) testy výstupních souborů. Síťové a placené služby nejsou součástí běžného testovacího běhu.
+## Zásady
 
+*   **Entity:** jeden registr s kanonickým názvem, typem, aliasy a nadřazenou entitou; nové navrhuje analýza (`navrženo`),
+    člověk potvrzuje, slučuje nebo zamítá. Obecná slova („firma“, „model“) entitou nejsou.
+*   **Tvrzení:** typ (fact / opinion / prediction / recommendation / hypothesis), volatilita, mluvčí, segment, stupeň
+    ověření. Pravdivost se neověřuje, ověřuje se, že to opravdu zaznělo.
+*   **Domény:** `knowledge_domain` (public, personal), `visibility` (public, private), `origin` (external, personal).
+    Soukromé jde do `14_Internal/` a je v soukromém Git repozitáři; důvěrné do `Confidential/` mimo Git.
+*   **Změny kódu:** před commitem `python -m pytest -q` a `python -m pipeline doctor`; žádná tajemství do Gitu;
+    analýza nikdy needituje `00_Assets/` ani generované bloky karet.
 
+## Co Knowledge OS není
 
-*   **AD-012: Analysis Never Modifies the Transcript**
-    Přepis (`00_Assets/transcripts/{source_id}.json`) je strojová vrstva pravdy. Analýza (shrnutí, claims, entity, postoje) je odvozená, kdykoli přegenerovatelná a nikdy přepis nemění. Provenance claimu je `segment_ids`; doslovný úryvek slouží jen jako lidsky čitelná kontrola.
-*   **AD-013: Source Identity & Versioned State**
-    Každý zdroj má `source_id = namespace:stabilní_id` (`yt:`, `file:`, `notta:`, `voice:`, `note:`) a `source_version`. Deduplikace se odvozuje z frontmatteru karet (ne z lokální databáze). Stav kroků pipeline je v `99_System/state/{source_id}.json` včetně enginu, verze promptu a hashů vstupu/výstupu.
-
-## Folder Structure
-- `00_Assets/`
-- `01_Zdroje/`
-- `02_Lide/`
-- `03_Organizace/`
-- `04_Projekty_a_Produkty/`
-- `05_Koncepty_a_Tema/`
-- `08_Summaries/`
-- `09_Research/`
-- `10_Otazky/`
-- `11_Sources/`
-- `12_Observations/` (Planned V5)
-- `13_Kontakty/`
-- `14_Internal/`                 # Interní a osobní soubory (VoiceNotes, poznámky) — V GITU (privátní repo); jen `14_Internal/Confidential/` je mimo Git
-- `15_Inbox_Text/`               # vstup: .md/.txt
-- `16_Inbox_Dokumenty/`          # vstup: .pdf/.docx/.xlsx/.pptx
-- `17_Inbox_Prepisy/`            # vstup: exporty z Notta, SRT/VTT, Word přepisy
-- `18_Inbox_Hlas/`               # vstup: hlasové poznámky z telefonu (PWA)
-- `99_System/`                   # prompty, config, state, index, queue.txt, docs
-- `pipeline/`                    # Python balíček (spouštění: `python -m pipeline <příkaz>`)
-
-## Policies
-
-*   **Source Policy**: Nové sledované kanály a weby se registrují v `11_Sources/` a konfigurují v `sources.yaml`.
-*   **Entity Policy**: Každá entita (např. [[Jan Novák]]) má vlastní soubor. Před vytvořením nové entity normalizujeme její název a zkontrolujeme duplicity.
-*   **Claims Policy**: Tvrzení (Claims) se ve V1 ukládají přímo do zdrojového souboru v `/01_Zdroje` pod sekci `## Claims`. Každé tvrzení musí obsahovat autora, typ (fact / opinion / prediction / recommendation / hypothesis), výchozí stav (active) a odhadovanou volatilitu s mírou jistoty (low/medium/high). Skutečné ověřování pravdivosti (verifikace) je odloženo do verze V2/V3.
-*   **Contact Policy**: Veřejná data o lidech patří do `/02_Lide/`. Osobní CRM (schůzky, maily) patří do `/13_Kontakty/`. Nikdy nemíchat.
-*   **Domain Policy**: Každý dokument obsahuje metadata určující jeho doménu (`knowledge_domain`: public, internal, personal, crm), původ (`origin`: external, internal, personal, imported) a úroveň viditelnosti (`visibility`: public, private, confidential). Interní a osobní soubory (doména internal/personal) se ukládají do `/14_Internal/` a jsou součástí privátního Git repozitáře; skutečně důvěrné soubory patří do `/14_Internal/Confidential/`, která je v Gitu ignorována.
-
-
-## MVP Definition
-Verze V1 (MVP) je dokončena, pokud:
-1. Lze stáhnout video přes `yt-dlp`.
-2. Lze získat přepis a analýzu přes Gemini API.
-3. Lze uložit vygenerovaný Markdown do Obsidianu.
-4. Funguje deduplikace přes SQLite.
-
-## Success Metrics
-- Po 3 měsících: 500+ zdrojů
-- Po 12 měsících: 5 000+ zdrojů
-- Po 5 letech: 50 000+ zdrojů
-
-## Non-Goals
-Knowledge OS není druhý Notion, sociální síť, task manager ani workflow systém. Je to výzkumná platforma a znalostní graf.
+Není to druhý Notion, sociální síť, task manager ani workflow systém. Není to systém s rolemi a oprávněními.
+Je to znalostní báze s ověřitelnými odpověďmi pro jednoho člověka nebo tým, který si věří.
