@@ -2,7 +2,7 @@
    Stejný styl používá web (náhled / schválený zápis) i PDF (WeasyPrint). Písma: fonts.css (web) / @font-face v PDF. */
 .jkdoc{--ink:#1A202C;--body:#475569;--line:#E2E8F0;--paper:#FFFFFF;--off:#F7FAFC;--terra:#C2542A;--terra-t:#A8461F;
   --teal:#0E7490;--sage:#6B8F71;--sage-t:#4F7358;--ai:#334155;
-  font-family:"Inter","Inter JK",system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:15px;line-height:1.6;
+  font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:15px;line-height:1.6;
   border-top:4px solid var(--terra);padding:28px 32px 24px;border-radius:4px;box-shadow:0 1px 3px rgba(26,32,44,.06),0 8px 28px rgba(26,32,44,.06)}
 .jkdoc *{box-sizing:border-box}
 .jkdoc h1,.jkdoc h2,.jkdoc h3,.jkdoc .jd-num,.jkdoc .jd-brand b{font-family:"Space Grotesk","Inter",sans-serif}

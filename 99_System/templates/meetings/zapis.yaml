@@ -1,7 +1,7 @@
 # Šablona zápisu ze schůzky (upravuje se v aplikaci → Schůzky → Šablony).
 # Typy polí: short = krátký text, text = delší text, datetime = datum a čas, people = osoby, list = seznam bodů, topics = projednané body (bod + popis), tasks = úkoly (co / kdo / do kdy)
 id: zapis
-name: Zápis ze schůzky JK
+name: Zápis ze schůzky
 fields:
 - id: nazev
   label: Název schůzky

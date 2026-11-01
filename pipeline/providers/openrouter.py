@@ -52,7 +52,7 @@ def chat(model: str, messages: list, timeout: int = 300, **extra) -> dict:
     body = {"model": model, "messages": messages, "temperature": 0, "usage": {"include": True}, **extra}
     req = urllib.request.Request(f"{API}/chat/completions", data=json.dumps(body).encode(),
                                  headers={"Authorization": f"Bearer {_key()}", "Content-Type": "application/json",
-                                          "HTTP-Referer": "https://kos.local", "X-Title": "JK-CML"})
+                                          "HTTP-Referer": "https://kos.local", "X-Title": "Knowledge OS"})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as f:
             out = json.load(f)

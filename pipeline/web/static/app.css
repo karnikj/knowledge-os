@@ -118,7 +118,7 @@ a.cite.k_voice{background:#fbf0cc;color:#7a5a00}a.cite.k_video{background:#f8e3d
 html{background:#e3e8ee}
 body{max-width:1000px;margin:0 auto;min-height:100vh}
 @media (min-width:940px){body{box-shadow:0 0 0 1px var(--line),0 10px 40px rgba(0,0,0,.08)}}
-/* záhlaví: JK - CML vlevo, záložky uprostřed, spotřeba vpravo */
+/* záhlaví: název vlevo, záložky uprostřed, spotřeba vpravo */
 .top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px 14px}
 .brand{justify-self:start}.usage{justify-self:end}
 .tabs{flex:none;justify-content:center}
@@ -257,7 +257,7 @@ html,body{overflow-x:clip}
 .jprev{margin:10px 0 0;display:grid;gap:8px}.jprev audio{width:100%}
 .jsum{margin:0;font-size:14px}
 .jtext{white-space:pre-wrap;font-size:14px;line-height:1.55;max-height:340px;overflow:auto;padding:10px 12px;background:var(--head);border-radius:8px;overflow-wrap:anywhere}
-/* Zápis schůzky — formulář v identitě JK: jasně oddělené části, AI text tmavě modrošedý + štítek, lidský text černý */
+/* Zápis schůzky — formulář: jasně oddělené části, AI text tmavě modrošedý + štítek, lidský text černý */
 .mform{gap:0;margin-top:14px;background:#fff;border:1px solid #E2E8F0;border-top:4px solid #C2542A;border-radius:4px;padding:6px 20px 12px;
   font-family:"Inter",system-ui,sans-serif;color:#1A202C}
 .mform .mfield{gap:8px;padding:16px 0;border-bottom:1px solid #E2E8F0}

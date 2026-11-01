@@ -265,7 +265,7 @@ function renderMeeting() {
     "tam ji odešlete ke zpracování nebo zahoďte."));
 
   if (m.status === "approved" || MT.preview) {
-    // hotový zápis (nebo náhled rozpracovaného) jako čitelný dokument v identitě JK
+    // hotový zápis (nebo náhled rozpracovaného) jako čitelný dokument
     const doc = h("div", {class: "mdoc"}, h("p", {class: "hint"}, "Načítám zápis…"));
     box.append(doc);
     api(`/api/meetings/${m.id}/doc`).then(r => { doc.innerHTML = r.html; })
